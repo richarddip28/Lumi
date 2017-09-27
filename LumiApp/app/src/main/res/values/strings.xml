@@ -1,4 +1,11 @@
 <resources>
-    <string name="app_name">LumiApp</string>
+    <string name="app_name">Lumi</string>
+
+    <string name="User_Name_Entry">User Name</string>
+    <string name="Password_Entry">Password</string>
+    <string name="login">Log In</string>
+
+    <string name="user_name">%1$s</string>
+    <string name="password">%1$s</string>
 
 </resources>
