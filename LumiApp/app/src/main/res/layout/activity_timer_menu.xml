@@ -5,43 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lumi_bg"
-
-    tools:context="ARKstudios.lumiapp.MainMenuActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="130dp"
-        android:layout_height="112dp"
-        app:srcCompat="@drawable/boo"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="@string/app_name"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="73dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+    tools:context="ARKstudios.lumiapp.TimerMenu">
 
     <ImageButton
         android:id="@+id/imageButton5"
@@ -78,8 +42,8 @@
         android:layout_height="25dp"
         android:layout_marginBottom="8dp"
         android:layout_marginRight="8dp"
-        android:onClick="settingsButtonClicked"
         android:background="@null"
+        android:onClick="settingsButtonClicked"
         android:scaleType="centerCrop"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageButton5"

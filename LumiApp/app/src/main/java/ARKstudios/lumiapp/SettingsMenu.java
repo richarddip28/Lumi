@@ -1,17 +1,15 @@
 package ARKstudios.lumiapp;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class MainMenuActivity extends AppCompatActivity {
+public class SettingsMenu extends AppCompatActivity {
 
     public ImageButton menu;
     public ImageButton settings;
@@ -32,10 +30,9 @@ public class MainMenuActivity extends AppCompatActivity {
         notifications = (ImageButton) findViewById(R.id.imageButton9);
         timer = (ImageButton) findViewById(R.id.imageButton3);
         fadeIn = AnimationUtils.loadAnimation(this,
-                        android.R.anim.fade_in);
+                android.R.anim.fade_in);
         fadeOut = AnimationUtils.loadAnimation(this,
                 android.R.anim.fade_out);
-
 
     }
 
@@ -72,8 +69,8 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void settingsButtonClicked(View view){
-        nextScreen = new Intent(this, SettingsMenu.class);
-        startActivity(nextScreen);
+        Toast.makeText(this, "You are already here!",
+                Toast.LENGTH_LONG).show();
     }
     public void colorButtonClicked(View view){
         nextScreen = new Intent(this, ColorMenu.class);
@@ -93,12 +90,10 @@ public class MainMenuActivity extends AppCompatActivity {
         startActivity(nextScreen);
     }
 
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main_menu);
-            init();
-
-        }//end onCreate
-    }//end class
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_settings_menu);
+        init();
+    }
+}
