@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class SettingsMenu extends AppCompatActivity {
+public class BabyMenu extends AppCompatActivity {
 
     public ImageButton menu;
     public ImageButton settings;
@@ -65,7 +65,7 @@ public class SettingsMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings_menu);
+        setContentView(R.layout.activity_baby_menu);
         init();
     }
 }

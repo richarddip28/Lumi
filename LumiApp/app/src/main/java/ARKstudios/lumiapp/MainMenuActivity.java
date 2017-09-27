@@ -1,9 +1,11 @@
 package ARKstudios.lumiapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -14,72 +16,57 @@ public class MainMenuActivity extends AppCompatActivity {
         public ImageButton color;
         public ImageButton baby;
         public ImageButton notifications;
-    
+        Intent nextScreen;
 
         public void init(){
 
-            settings = (ImageButton)findViewById(R.id.imageButton7);
-            color = (ImageButton)findViewById(R.id.imageButton6);
-            baby = (ImageButton)findViewById(R.id.imageButton8);
-            notifications = (ImageButton)findViewById(R.id.imageButton9);
             menu = (ImageButton) findViewById(R.id.imageButton5);
+            settings = (ImageButton) findViewById(R.id.imageButton7);
+            color = (ImageButton) findViewById(R.id.imageButton6);
+            baby = (ImageButton) findViewById(R.id.imageButton8);
+            notifications = (ImageButton) findViewById(R.id.imageButton9);
 
+        }
 
-            try {
-                menu.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+        public void menuButtonClicked(View view){
 
-                        settings.setOnClickListener(this);
+            Toast.makeText(MainMenuActivity.this, "menu",
+                    Toast.LENGTH_LONG).show();
 
-                        if(settings.getVisibility()==View.INVISIBLE) {
+            if (settings.getVisibility() == View.INVISIBLE) {
 
-                            settings.setVisibility(View.VISIBLE);
-                            color.setVisibility(View.VISIBLE);
-                            baby.setVisibility(View.VISIBLE);
-                            notifications.setVisibility(View.VISIBLE);
+                settings.setVisibility(View.VISIBLE);
+                color.setVisibility(View.VISIBLE);
+                baby.setVisibility(View.VISIBLE);
+                notifications.setVisibility(View.VISIBLE);
+            }//end if
+            else {
 
-                            switch (view.getId()) {
+                settings.setVisibility(View.INVISIBLE);
+                color.setVisibility(View.INVISIBLE);
+                baby.setVisibility(View.INVISIBLE);
+                notifications.setVisibility(View.INVISIBLE);
+            }//end else
 
-                                case R.id.imageButton7:
+        }
 
-                                    Toast.makeText(MainMenuActivity.this, "WORKING",
-                                            Toast.LENGTH_LONG).show();
-                                    Intent nextScreen = new Intent(MainMenuActivity.this, SettingsMenu.class);
-                                    startActivity(nextScreen);
-                                    break;
+    public void settingsButtonClicked(View view){
+        nextScreen = new Intent(this, SettingsMenu.class);
+        startActivity(nextScreen);
+    }
+    public void colorButtonClicked(View view){
+        nextScreen = new Intent(this, ColorMenu.class);
+        startActivity(nextScreen);
+    }
+    public void babyButtonClicked(View view){
+        nextScreen = new Intent(this, BabyMenu.class);
+        startActivity(nextScreen);
+    }
+    public void notificationsButtonClicked(View view){
+        nextScreen = new Intent(this, NotificationsMenu.class);
+        startActivity(nextScreen);
+    }
 
-                                default:
-                                    break;
-
-                            }//end switch
-
-                        }//end if
-
-                        else{
-
-                            settings.setVisibility(View.INVISIBLE);
-                            color.setVisibility(View.INVISIBLE);
-                            baby.setVisibility(View.INVISIBLE);
-                            notifications.setVisibility(View.INVISIBLE);
-                        }//end else
-
-
-                    }//end onClick
-                });
-            } catch (Exception e) {
-
-                Toast.makeText(MainMenuActivity.this, e.toString(),
-                        Toast.LENGTH_LONG).show();
-            }
-
-
-
-
-
-
-
-        }//end init
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -87,5 +74,5 @@ public class MainMenuActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main_menu);
             init();
 
-        }
-    }
+        }//end onCreate
+    }//end class
