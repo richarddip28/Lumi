@@ -14,6 +14,7 @@ public class ColorMenu extends AppCompatActivity {
     public ImageButton color;
     public ImageButton baby;
     public ImageButton notifications;
+    public ImageButton timer;
     Intent nextScreen;
 
     public void init(){
@@ -23,6 +24,7 @@ public class ColorMenu extends AppCompatActivity {
         color = (ImageButton) findViewById(R.id.imageButton6);
         baby = (ImageButton) findViewById(R.id.imageButton8);
         notifications = (ImageButton) findViewById(R.id.imageButton9);
+        timer = (ImageButton) findViewById(R.id.imageButton3);
 
     }
 
@@ -34,6 +36,7 @@ public class ColorMenu extends AppCompatActivity {
             color.setVisibility(View.VISIBLE);
             baby.setVisibility(View.VISIBLE);
             notifications.setVisibility(View.VISIBLE);
+            timer.setVisibility(View.VISIBLE);
         }//end if
         else {
 
@@ -41,6 +44,7 @@ public class ColorMenu extends AppCompatActivity {
             color.setVisibility(View.INVISIBLE);
             baby.setVisibility(View.INVISIBLE);
             notifications.setVisibility(View.INVISIBLE);
+            timer.setVisibility(View.INVISIBLE);
         }//end else
 
     }
@@ -50,8 +54,8 @@ public class ColorMenu extends AppCompatActivity {
         startActivity(nextScreen);
     }
     public void colorButtonClicked(View view){
-        nextScreen = new Intent(this, ColorMenu.class);
-        startActivity(nextScreen);
+        Toast.makeText(this, "You are already here!",
+                Toast.LENGTH_LONG).show();
     }
     public void babyButtonClicked(View view){
         nextScreen = new Intent(this, BabyMenu.class);
@@ -61,6 +65,12 @@ public class ColorMenu extends AppCompatActivity {
         nextScreen = new Intent(this, NotificationsMenu.class);
         startActivity(nextScreen);
     }
+
+    public void timerButtonClicked(View view){
+        nextScreen = new Intent(this, TimerMenu.class);
+        startActivity(nextScreen);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

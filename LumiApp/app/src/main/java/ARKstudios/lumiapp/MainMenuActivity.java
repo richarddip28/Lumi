@@ -11,44 +11,45 @@ import android.widget.Toast;
 
 public class MainMenuActivity extends AppCompatActivity {
 
-        public ImageButton menu;
-        public ImageButton settings;
-        public ImageButton color;
-        public ImageButton baby;
-        public ImageButton notifications;
-        Intent nextScreen;
+    public ImageButton menu;
+    public ImageButton settings;
+    public ImageButton color;
+    public ImageButton baby;
+    public ImageButton notifications;
+    public ImageButton timer;
+    Intent nextScreen;
 
-        public void init(){
+    public void init(){
 
-            menu = (ImageButton) findViewById(R.id.imageButton5);
-            settings = (ImageButton) findViewById(R.id.imageButton7);
-            color = (ImageButton) findViewById(R.id.imageButton6);
-            baby = (ImageButton) findViewById(R.id.imageButton8);
-            notifications = (ImageButton) findViewById(R.id.imageButton9);
+        menu = (ImageButton) findViewById(R.id.imageButton5);
+        settings = (ImageButton) findViewById(R.id.imageButton7);
+        color = (ImageButton) findViewById(R.id.imageButton6);
+        baby = (ImageButton) findViewById(R.id.imageButton8);
+        notifications = (ImageButton) findViewById(R.id.imageButton9);
+        timer = (ImageButton) findViewById(R.id.imageButton3);
 
-        }
+    }
 
-        public void menuButtonClicked(View view){
+    public void menuButtonClicked(View view){
 
-            Toast.makeText(MainMenuActivity.this, "menu",
-                    Toast.LENGTH_LONG).show();
+        if (settings.getVisibility() == View.INVISIBLE) {
 
-            if (settings.getVisibility() == View.INVISIBLE) {
+            settings.setVisibility(View.VISIBLE);
+            color.setVisibility(View.VISIBLE);
+            baby.setVisibility(View.VISIBLE);
+            notifications.setVisibility(View.VISIBLE);
+            timer.setVisibility(View.VISIBLE);
+        }//end if
+        else {
 
-                settings.setVisibility(View.VISIBLE);
-                color.setVisibility(View.VISIBLE);
-                baby.setVisibility(View.VISIBLE);
-                notifications.setVisibility(View.VISIBLE);
-            }//end if
-            else {
+            settings.setVisibility(View.INVISIBLE);
+            color.setVisibility(View.INVISIBLE);
+            baby.setVisibility(View.INVISIBLE);
+            notifications.setVisibility(View.INVISIBLE);
+            timer.setVisibility(View.INVISIBLE);
+        }//end else
 
-                settings.setVisibility(View.INVISIBLE);
-                color.setVisibility(View.INVISIBLE);
-                baby.setVisibility(View.INVISIBLE);
-                notifications.setVisibility(View.INVISIBLE);
-            }//end else
-
-        }
+    }
 
     public void settingsButtonClicked(View view){
         nextScreen = new Intent(this, SettingsMenu.class);
@@ -64,6 +65,11 @@ public class MainMenuActivity extends AppCompatActivity {
     }
     public void notificationsButtonClicked(View view){
         nextScreen = new Intent(this, NotificationsMenu.class);
+        startActivity(nextScreen);
+    }
+
+    public void timerButtonClicked(View view){
+        nextScreen = new Intent(this, TimerMenu.class);
         startActivity(nextScreen);
     }
 

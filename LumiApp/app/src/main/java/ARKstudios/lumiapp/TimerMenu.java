@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class BabyMenu extends AppCompatActivity {
+public class TimerMenu extends AppCompatActivity {
 
     public ImageButton menu;
     public ImageButton settings;
@@ -58,8 +58,8 @@ public class BabyMenu extends AppCompatActivity {
         startActivity(nextScreen);
     }
     public void babyButtonClicked(View view){
-        Toast.makeText(this, "You are already here!",
-                Toast.LENGTH_LONG).show();
+        nextScreen = new Intent(this, BabyMenu.class);
+        startActivity(nextScreen);
     }
     public void notificationsButtonClicked(View view){
         nextScreen = new Intent(this, NotificationsMenu.class);
@@ -67,14 +67,16 @@ public class BabyMenu extends AppCompatActivity {
     }
 
     public void timerButtonClicked(View view){
-        nextScreen = new Intent(this, TimerMenu.class);
-        startActivity(nextScreen);
+        Toast.makeText(this, "You are already here!",
+                Toast.LENGTH_LONG).show();
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_baby_menu);
+        setContentView(R.layout.activity_timer_menu);
         init();
     }
 }
