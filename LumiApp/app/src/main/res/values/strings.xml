@@ -1,11 +1,21 @@
 <resources>
     <string name="app_name">Lumi</string>
 
+
+    <!--Login Screen-->
     <string name="User_Name_Entry">User Name</string>
     <string name="Password_Entry">Password</string>
     <string name="login">Log In</string>
 
     <string name="user_name">%1$s</string>
     <string name="password">%1$s</string>
+
+    <!--Baby Menu Screen-->
+    <string name="mybaby">My Baby</string>
+    <string name="automode">auto mode</string>
+    <string name="automode_description">applying this mode allows lumi to automatically sense when light is needed</string>
+
+    <string name="cryingmode">crying mode</string>
+    <string name="cryingmode_description">appling this mode allows lumi to automatically alert the app, as well as display a customized lamp brightness and color setting</string>
 
 </resources>
