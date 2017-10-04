@@ -1,13 +1,17 @@
 package ARKstudios.lumiapp;
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class SettingsMenu extends AppCompatActivity {
 
@@ -90,10 +94,36 @@ public class SettingsMenu extends AppCompatActivity {
         startActivity(nextScreen);
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_menu);
         init();
+
+
+
+        ToggleButton notifToggle = (ToggleButton) findViewById(R.id.toggleNotification);
+        notifToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                Context context = getApplicationContext();
+                CharSequence notifTest = "Notifications are now on!";
+                CharSequence notifTesttwo = "Notifications are off!";
+                int duration = Toast.LENGTH_SHORT;
+
+                if (isChecked) {
+                    NotificationManager mNotificationManager =
+                            (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                    Toast toast = Toast.makeText(context, notifTest, duration);
+                    toast.show();
+                }
+                else {
+                    Toast toast = Toast.makeText(context, notifTesttwo, duration);
+                    toast.show();
+                }
+            }
+        });
     }
 }
