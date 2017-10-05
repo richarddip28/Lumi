@@ -1,13 +1,21 @@
 package ARKstudios.lumiapp;
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class SettingsMenu extends AppCompatActivity {
 
@@ -20,6 +28,9 @@ public class SettingsMenu extends AppCompatActivity {
     Intent nextScreen;
     Animation fadeIn;
     Animation fadeOut;
+
+    protected Vibrator vibrate;
+
 
     public void init(){
 
@@ -90,10 +101,56 @@ public class SettingsMenu extends AppCompatActivity {
         startActivity(nextScreen);
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_menu);
         init();
+
+        vibrate = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        if (vibrate == null) {
+            Context context = getApplicationContext();
+            Toast.makeText(context, "No Vibrator in this device!", Toast.LENGTH_SHORT);
+        }
+
+
+        ToggleButton notifToggle = (ToggleButton) findViewById(R.id.toggleNotification);
+        notifToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                Context context = getApplicationContext();
+                CharSequence notifTest = "Notifications are now on!";
+                CharSequence notifTesttwo = "Notifications are off!";
+                int duration = Toast.LENGTH_SHORT;
+
+                if (isChecked) {
+                    NotificationManager mNotificationManager =
+                            (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+                    vibrate.vibrate(200);
+
+                    Toast toast = Toast.makeText(context, notifTest, duration);
+                    toast.show();
+                }
+                else {
+
+                    vibrate.vibrate(200);
+
+                    Toast toast = Toast.makeText(context, notifTesttwo, duration);
+                    toast.show();
+                }
+            }
+        });
+
+        Spinner spinner = (Spinner) findViewById(R.id.lang_spinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.lang_array, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
     }
 }

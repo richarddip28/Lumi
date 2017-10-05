@@ -7,6 +7,81 @@
     android:background="@color/lumi_bg"
     tools:context="ARKstudios.lumiapp.SettingsMenu">
 
+    <FrameLayout
+        android:id="@id/notifSettings"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:text="@string/notifSetting"
+            android:textColor="@color/lumi_bg"
+            android:textSize="30sp"
+            android:onClick="notificationsButtonClicked"/>
+
+        <ToggleButton
+            android:id="@+id/toggleNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="end"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@id/langSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
+            android:background="@color/white"
+            android:text="@string/langSetting"
+            android:textColor="@color/lumi_bg"
+            android:textSize="30sp"
+            />
+
+        <Spinner
+            android:id="@+id/lang_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"/>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@id/aboutSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_gravity="end">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
+            android:background="@color/white"
+            android:text="@string/aboutSetting"
+            android:textColor="@color/lumi_bg"
+            android:textSize="30sp"
+            />
+
+
+
+    </FrameLayout>
+
+
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="45dp"
