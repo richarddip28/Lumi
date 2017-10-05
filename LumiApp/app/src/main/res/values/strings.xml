@@ -7,5 +7,13 @@
 
     <string name="user_name">%1$s</string>
     <string name="password">%1$s</string>
+    <string name="langSetting">Language</string>
+    <string name="aboutSetting">About</string>
+    <string name="notifSetting">Notifications</string>
+
+    <string-array name="lang_array">
+        <item>English</item>
+        <item>French</item>
+    </string-array>
 
 </resources>
