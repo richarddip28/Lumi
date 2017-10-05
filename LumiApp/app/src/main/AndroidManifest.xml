@@ -2,13 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ARKstudios.lumiapp">
 
+
     <uses-permission android:name="android.permission.VIBRATE" />
 
+
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/icon_lumi"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/icon_lumi"
+        android:roundIcon="@mipmap/icon_lumi_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginScreen">
