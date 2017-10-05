@@ -1,9 +1,12 @@
 package ARKstudios.lumiapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +24,8 @@ public class LoginScreen extends AppCompatActivity {
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
     Boolean nameOk, passwordOk;
+    Vibrator v;
+    VibrationEffect vibe;
 
     public void init(){
 
@@ -31,6 +36,9 @@ public class LoginScreen extends AppCompatActivity {
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
+
+        v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
 
     }// end init()
 

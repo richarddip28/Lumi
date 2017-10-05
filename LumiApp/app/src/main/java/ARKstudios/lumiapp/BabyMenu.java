@@ -1,9 +1,17 @@
 package ARKstudios.lumiapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.media.MediaPlayer;
+import android.os.Build;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -11,14 +19,17 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
 import static ARKstudios.lumiapp.R.id.parent;
+import static ARKstudios.lumiapp.R.styleable.CompoundButton;
 
 public class BabyMenu extends AppCompatActivity {
 
@@ -34,6 +45,12 @@ public class BabyMenu extends AppCompatActivity {
     TextView babyTitle;
     MediaPlayer mp;
     Spinner songList;
+    SensorManager sensorManager;
+    Sensor sensor;
+    VibrationEffect vibe;
+    Vibrator v;
+    Switch s;
+    TextView light;
 
     public void init(){
 
@@ -53,7 +70,25 @@ public class BabyMenu extends AppCompatActivity {
         babyTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22);
         songList = (Spinner) findViewById(R.id.spinner_song);
 
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+        s = (Switch) findViewById(R.id.switch1);
+        light = (TextView) findViewById(R.id.light);
+
+
+
     }
+
+    private void vibratePhone() {
+        if (Build.VERSION.SDK_INT >= 26) {
+            ((Vibrator) getSystemService(VIBRATOR_SERVICE)).vibrate(VibrationEffect.createOneShot(150, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            ((Vibrator) getSystemService(VIBRATOR_SERVICE)).vibrate(150);
+        }
+    }
+
+
 
     public void menuButtonClicked(View view){
 
@@ -109,6 +144,30 @@ public class BabyMenu extends AppCompatActivity {
         startActivity(nextScreen);
     }
 
+    public void onResume() {
+        super.onResume();
+        sensorManager.registerListener(lightListener, sensor,
+                SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    public void onStop() {
+        super.onStop();
+        sensorManager.unregisterListener(lightListener);
+    }
+
+    public SensorEventListener lightListener = new SensorEventListener() {
+        public void onAccuracyChanged(Sensor sensor, int acc) { }
+
+        public void onSensorChanged(SensorEvent event) {
+            float x = event.values[0];
+
+            light.setText((int)x + " lux");
+
+            if(x<1000 && s.isChecked())
+                vibratePhone();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,6 +187,7 @@ public class BabyMenu extends AppCompatActivity {
                             }
                             mp = MediaPlayer.create(BabyMenu.this, R.raw.rock_a_bye_baby);
                             mp.start();
+                            break;
                         case 2:
                             if (mp != null) {
                                 mp.release();
@@ -135,6 +195,7 @@ public class BabyMenu extends AppCompatActivity {
                             }
                             mp = MediaPlayer.create(BabyMenu.this, R.raw.twinkle_twinkle);
                             mp.start();
+                            break;
                         default:
                             return;
                     }//end switch
@@ -145,5 +206,23 @@ public class BabyMenu extends AppCompatActivity {
                 return;
             }
         });
-    }
-}
+
+            s.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                    if(s.isChecked()){
+                        light.setVisibility(View.VISIBLE);
+                    }
+                    else{
+                        light.setVisibility(View.INVISIBLE);
+                    }
+
+                }
+            });
+
+
+
+
+    }//end onCreate()
+}//end Class
