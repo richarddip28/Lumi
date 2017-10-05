@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Lumi</string>
+
+
+    <!--Login Screen-->
+    <string name="User_Name_Entry">Nom d\'utilisateur</string>
+    <string name="Password_Entry">"Mot de passe "</string>
+    <string name="login">"S'identifier "</string>
+
+    <string name="user_name">%1$s</string>
+    <string name="password">%1$s</string>
+    <string name="langSetting">"La langue "</string>
+    <string name="aboutSetting">"au sujet de "</string>
+    <string name="notifSetting">Notifications</string>
+
+    <string-array name="lang_array">
+        <item>English</item>
+        <item>French</item>
+    </string-array>
+
+    <!--Baby Menu Screen-->
+    <string name="mybaby">"mon bébé "</string>
+    <string name="automode">"mode automatique "</string>
+    <string name="automode_description">l\'application de ce mode permet à lumi de détecter automatiquement lorsque la lumière est nécessaire</string>
+
+    <string name="cryingmode">Mode pleurs</string>
+    <string name="cryingmode_description">L\'application de ce mode permet à lumi d\'alerter automatiquement l\'application, ainsi que d\'afficher une luminosité et un réglage de couleur personnalisés</string>
+    <string name="adjustpref">ajuster la sensibilité</string>
+
+    <string name="name_error">Vous n\'avez pas saisi de nom</string>
+    <string name="password_error">Vous n\'avez pas saisi de mot de passe</string>
+
+    <string name="lullabies">berceuses</string>
+
+    <string-array name="song_list">
+        <item>Choose Song</item>
+        <item>Rock a bye baby</item>
+        <item>Twinkle Twinkle</item>
+    </string-array>
+
+    <string name="rockabye_song">Rock a bye baby</string>
+    <string name="twinkle_song">Twinkle Twinkle</string>
+    <string name="lightReader">Lecture légère</string>
+
+</resources>
