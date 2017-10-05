@@ -146,6 +146,7 @@ public class SettingsMenu extends AppCompatActivity {
 
         Spinner spinner = (Spinner) findViewById(R.id.lang_spinner);
 
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.lang_array, android.R.layout.simple_spinner_item);
 
