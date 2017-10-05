@@ -183,7 +183,15 @@
             android:textSize="14sp"
             android:textStyle="bold" />
 
-
+        <TextView
+            android:id="@+id/light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            android:textStyle="bold"
+            android:text="@string/lightReader" />
 
 
     </LinearLayout>
