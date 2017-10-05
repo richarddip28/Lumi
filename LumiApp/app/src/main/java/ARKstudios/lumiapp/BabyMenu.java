@@ -77,6 +77,9 @@ public class BabyMenu extends AppCompatActivity {
         v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
         s = (Switch) findViewById(R.id.switch1);
         light = (TextView) findViewById(R.id.light);
+        adapter = ArrayAdapter.createFromResource(this, R.array.song_list, R.layout.spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        songList.setAdapter(adapter);
 
         adapter = ArrayAdapter.createFromResource(this, R.array.song_list, R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
