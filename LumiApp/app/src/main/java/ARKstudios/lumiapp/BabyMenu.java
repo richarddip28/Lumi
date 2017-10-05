@@ -1,13 +1,24 @@
 package ARKstudios.lumiapp;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
+import static ARKstudios.lumiapp.R.id.parent;
 
 public class BabyMenu extends AppCompatActivity {
 
@@ -20,6 +31,9 @@ public class BabyMenu extends AppCompatActivity {
     Intent nextScreen;
     Animation fadeIn;
     Animation fadeOut;
+    TextView babyTitle;
+    MediaPlayer mp;
+    Spinner songList;
 
     public void init(){
 
@@ -33,6 +47,11 @@ public class BabyMenu extends AppCompatActivity {
                 android.R.anim.fade_in);
         fadeOut = AnimationUtils.loadAnimation(this,
                 android.R.anim.fade_out);
+        babyTitle = (TextView) findViewById(R.id.babyTitle);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/sunshine.ttf");
+        babyTitle.setTypeface(custom_font);
+        babyTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22);
+        songList = (Spinner) findViewById(R.id.spinner_song);
 
     }
 
@@ -95,5 +114,36 @@ public class BabyMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_baby_menu);
         init();
+
+        songList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    switch(i){
+
+                        case 1:
+                            if (mp != null) {
+                                mp.release();
+                                mp = null;
+                            }
+                            mp = MediaPlayer.create(BabyMenu.this, R.raw.rock_a_bye_baby);
+                            mp.start();
+                        case 2:
+                            if (mp != null) {
+                                mp.release();
+                                mp = null;
+                            }
+                            mp = MediaPlayer.create(BabyMenu.this, R.raw.twinkle_twinkle);
+                            mp.start();
+                        default:
+                            return;
+                    }//end switch
+                }//end onSelected
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                return;
+            }
+        });
     }
 }
