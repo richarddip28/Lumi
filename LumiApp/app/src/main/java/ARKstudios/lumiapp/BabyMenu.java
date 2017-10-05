@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -51,6 +52,7 @@ public class BabyMenu extends AppCompatActivity {
     Vibrator v;
     Switch s;
     TextView light;
+    ArrayAdapter adapter;
 
     public void init(){
 
@@ -75,6 +77,11 @@ public class BabyMenu extends AppCompatActivity {
         v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
         s = (Switch) findViewById(R.id.switch1);
         light = (TextView) findViewById(R.id.light);
+
+        adapter = ArrayAdapter.createFromResource(this, R.array.song_list, R.layout.spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        songList.setAdapter(adapter);
+
 
 
 
