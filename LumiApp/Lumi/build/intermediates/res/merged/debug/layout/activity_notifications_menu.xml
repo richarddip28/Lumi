@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lumi_bg"
+    tools:context="ARKstudios.lumiapp.NotificationsMenu">
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@null"
+        android:onClick="menuButtonClicked"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/circle_blue"
+        tools:layout_editor_absoluteX="258dp"
+        tools:layout_editor_absoluteY="448dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@null"
+        android:onClick="colorButtonClicked"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+        app:layout_constraintRight_toLeftOf="@+id/imageButton9"
+        app:srcCompat="@drawable/color_palette" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="settingsButtonClicked"
+        android:layout_marginRight="8dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+        app:layout_constraintRight_toLeftOf="@+id/imageButton3"
+        app:srcCompat="@drawable/setting" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:background="@null"
+        android:onClick="babyButtonClicked"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/baby" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@null"
+        android:onClick="notificationsButtonClicked"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+        app:layout_constraintRight_toLeftOf="@+id/imageButton8"
+        app:srcCompat="@drawable/notifications" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:onClick="timerButtonClicked"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+        app:layout_constraintRight_toLeftOf="@+id/imageButton6"
+        app:srcCompat="@drawable/timer1" />
+
+</android.support.constraint.ConstraintLayout>
