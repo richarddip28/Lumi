@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Lumi</string>
+
+
+    <!--Login Screen-->
+    <string name="User_Name_Entry">User Name</string>
+    <string name="Password_Entry">Password</string>
+    <string name="login">Log In</string>
+
+    <string name="user_name">%1$s</string>
+    <string name="password">%1$s</string>
+    <string name="langSetting">Language</string>
+    <string name="aboutSetting">About</string>
+    <string name="notifSetting">Notifications</string>
+
+    <string-array name="lang_array">
+        <item>English</item>
+        <item>French</item>
+    </string-array>
+
+    <!--Baby Menu Screen-->
+    <string name="mybaby">myBaby</string>
+    <string name="automode">auto mode</string>
+    <string name="automode_description">applying this mode allows lumi to automatically sense when light is needed</string>
+
+    <string name="cryingmode">crying mode</string>
+    <string name="cryingmode_description">applying this mode allows lumi to automatically alert the app, as well as display a customized lamp brightness and color setting</string>
+    <string name="adjustpref">adjust sensitivity</string>
+
+    <string name="name_error">You did not enter a Name</string>
+    <string name="password_error">You did not enter a Password</string>
+
+    <string name="lullabies">lullabies</string>
+
+    <string-array name="song_list">
+        <item>Choose Song</item>
+        <item>Rock a bye baby</item>
+        <item>Twinkle Twinkle</item>
+    </string-array>
+
+    <string name="rockabye_song">Rock a bye baby</string>
+    <string name="twinkle_song">Twinkle Twinkle</string>
+    <string name="lightReader">Light Reading</string>
+    <string name="titleSetting">Settings</string>
+
+</resources>
