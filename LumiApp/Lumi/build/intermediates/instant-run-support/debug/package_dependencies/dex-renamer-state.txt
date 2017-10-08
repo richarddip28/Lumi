@@ -1,4 +1,4 @@
-#Fri Oct 06 00:31:32 EDT 2017
+#Sat Oct 07 20:24:31 EDT 2017
 file.2=C\:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_77160fc1989e7527f87826bc48e6e7d8f063c3c4\\classes.dex
 base.2=C\:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_77160fc1989e7527f87826bc48e6e7d8f063c3c4
 file.1=C\:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-26.0.0-alpha1_f7c1775d1f70a507f5932f452717ce099bcd6fdc\\classes.dex

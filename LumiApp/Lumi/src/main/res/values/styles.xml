@@ -24,4 +24,14 @@
         <item name="android:textColor">@color/my_spinner_text_color</item>
     </style>
 
+    <style name="TextViewTheme">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="PlainTextViewStyle">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+
+
 </resources>

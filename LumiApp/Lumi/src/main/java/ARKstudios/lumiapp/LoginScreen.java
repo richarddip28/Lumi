@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
@@ -18,34 +19,62 @@ import android.widget.Toast;
 
 public class LoginScreen extends AppCompatActivity {
 
-    Button nextButton;
-    Intent nextScreen;
+    Button nextButton, registerButton;
+    TextView title;
+    Intent nextScreen, registerScreen;
     EditText editTextName, editPassword;
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
     Boolean nameOk, passwordOk;
     Vibrator v;
     VibrationEffect vibe;
+    Typeface custom_font;
+
+    public void setFont(){
+
+        nextButton.setTypeface(custom_font);
+        registerButton.setTypeface(custom_font);
+        editTextName.setTypeface(custom_font);
+        editPassword.setTypeface(custom_font);
+        title.setTypeface(custom_font);
+
+    }
 
     public void init(){
 
-        nextButton = (Button) findViewById(R.id.button);
+        custom_font = Typeface.createFromAsset(getAssets(),  "fonts/Lato-Black.ttf");
+
+        nextButton = (Button) findViewById(R.id.button4);
+        registerButton = (Button) findViewById(R.id.button3);
         editTextName = (EditText) findViewById(R.id.editText);
         editPassword = (EditText) findViewById(R.id.editText2);
+        title = (TextView) findViewById(R.id.textView);
         nextScreen = new Intent(this, MainMenuActivity.class);
+        registerScreen = new Intent(this, RegisterScreen.class);
+
+
+        setFont();
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
 
         v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
-
     }// end init()
 
     public void getUserInfo(){
 
-        editor.putString("name_final", editTextName.getText().toString());
-        editor.putString("password_final", editPassword.getText().toString());
+//        editor.putString("name_final", editTextName.getText().toString());
+//        editor.putString("password_final", editPassword.getText().toString());
+
+//        USER INFO STORED IN RegisterScreen
+//        LOGIN SCREEN MUST MATCH INFO BEFORE CONTINUING
+
+    }
+
+    public void goToRegisterScreen(View view){
+
+        startActivity(registerScreen);
 
     }
 

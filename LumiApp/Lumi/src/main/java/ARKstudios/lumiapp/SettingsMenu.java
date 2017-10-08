@@ -29,7 +29,6 @@ public class SettingsMenu extends AppCompatActivity {
     Intent nextScreen;
     Animation fadeIn;
     Animation fadeOut;
-    ArrayAdapter adapter;
 
     protected Vibrator vibrate;
 
@@ -46,7 +45,6 @@ public class SettingsMenu extends AppCompatActivity {
                 android.R.anim.fade_in);
         fadeOut = AnimationUtils.loadAnimation(this,
                 android.R.anim.fade_out);
-
 
     }
 
@@ -119,8 +117,8 @@ public class SettingsMenu extends AppCompatActivity {
         }
 
 
-        Switch notifSwitch = (Switch) findViewById(R.id.notifSwitch);
-        notifSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Switch notifToggle = (Switch) findViewById(R.id.switch3);
+        notifToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
                 Context context = getApplicationContext();
@@ -147,10 +145,13 @@ public class SettingsMenu extends AppCompatActivity {
             }
         });
 
-        Spinner language = (Spinner) findViewById(R.id.lang_spinner);
-
-        adapter = ArrayAdapter.createFromResource(this, R.array.lang_array, R.layout.spinner_item);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        language.setAdapter(adapter);
+//        Spinner spinner = (Spinner) findViewById(R.id.lang_spinner);
+//
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.lang_array, android.R.layout.simple_spinner_item);
+//
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        spinner.setAdapter(adapter);
     }
 }

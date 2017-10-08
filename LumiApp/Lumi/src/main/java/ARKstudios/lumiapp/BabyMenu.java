@@ -43,7 +43,7 @@ public class BabyMenu extends AppCompatActivity {
     Intent nextScreen;
     Animation fadeIn;
     Animation fadeOut;
-    TextView babyTitle;
+    TextView babyTitle,tf1,tf2,tf3,tf4,tf5,tf6;
     MediaPlayer mp;
     Spinner songList;
     SensorManager sensorManager;
@@ -53,6 +53,22 @@ public class BabyMenu extends AppCompatActivity {
     Switch s;
     TextView light;
     ArrayAdapter adapter;
+    Typeface custom_font;
+
+    public void setFont(){
+
+        custom_font = Typeface.createFromAsset(getAssets(),  "fonts/Lato-Black.ttf");
+
+        babyTitle.setTypeface(custom_font);
+        tf1.setTypeface(custom_font);
+        tf2.setTypeface(custom_font);
+        tf3.setTypeface(custom_font);
+        tf4.setTypeface(custom_font);
+        tf5.setTypeface(custom_font);
+        tf6.setTypeface(custom_font);
+
+
+    }
 
     public void init(){
 
@@ -67,9 +83,16 @@ public class BabyMenu extends AppCompatActivity {
         fadeOut = AnimationUtils.loadAnimation(this,
                 android.R.anim.fade_out);
         babyTitle = (TextView) findViewById(R.id.babyTitle);
-        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/sunshine.ttf");
-        babyTitle.setTypeface(custom_font);
-        babyTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22);
+        tf1 = (TextView) findViewById(R.id.textView4);
+        tf2 = (TextView) findViewById(R.id.textView5);
+        tf3 = (TextView) findViewById(R.id.textView6);
+        tf4 = (TextView) findViewById(R.id.textView7);
+        tf5 = (TextView) findViewById(R.id.textView3);
+        tf6 = (TextView) findViewById(R.id.textView8);
+
+        setFont();
+
+
         songList = (Spinner) findViewById(R.id.spinner_song);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);

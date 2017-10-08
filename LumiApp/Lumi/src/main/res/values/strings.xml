@@ -6,6 +6,9 @@
     <string name="User_Name_Entry">User Name</string>
     <string name="Password_Entry">Password</string>
     <string name="login">Log In</string>
+    <string name="register_id">Register Lumi ID</string>
+    <string name="name_hint">Enter Lumi ID</string>
+    <string name="pass_hint">Enter Password</string>
 
     <string name="user_name">%1$s</string>
     <string name="password">%1$s</string>
@@ -17,6 +20,14 @@
         <item>English</item>
         <item>French</item>
     </string-array>
+
+    <!--Register Screen-->
+    <string name="register_title">Registration Screen</string>
+    <string name="register_header">Register your Lumi using the serial number located on the bottom of the product</string>
+    <string name="lumi_serial">Lumi Serial Number</string>
+    <string name="lumi_password">New Password</string>
+    <string name="lumi_password_confirm">Confirm Password</string>
+    <string name="confirm_reg">Confirm</string>
 
     <!--Baby Menu Screen-->
     <string name="mybaby">myBaby</string>
@@ -41,6 +52,5 @@
     <string name="rockabye_song">Rock a bye baby</string>
     <string name="twinkle_song">Twinkle Twinkle</string>
     <string name="lightReader">Light Reading</string>
-    <string name="titleSetting">Settings</string>
 
 </resources>
