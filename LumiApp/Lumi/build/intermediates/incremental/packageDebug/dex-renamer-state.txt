@@ -1,4 +1,4 @@
-#Sun Oct 08 15:54:16 EDT 2017
+#Sun Oct 08 16:51:35 EDT 2017
 base.0=C\:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_ec0b8e2dc40b741c848f640e75da3fe24d14ce7c
 renamed.1=classes2.dex
 renamed.0=classes.dex

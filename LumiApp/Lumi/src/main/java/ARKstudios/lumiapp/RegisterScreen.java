@@ -63,9 +63,9 @@ public class RegisterScreen extends AppCompatActivity {
         try{
             if(lumi_serial.getText().toString().length() < 9){
                 if(lumi_serial.getText().toString().matches(""))
-                    Toast.makeText(this, "Enter Lumi Serial Number", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getResources().getString(R.string.lumi_no_sn), Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(this, "Enter the Full 9 Digit Lumi Serial Number", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getResources().getString(R.string.lumi_not_full), Toast.LENGTH_SHORT).show();
 
                 serialOk = false;
             }
@@ -75,19 +75,19 @@ public class RegisterScreen extends AppCompatActivity {
 
             if (password.getText().toString().matches(password2.getText().toString())){
                 if(password.getText().toString().matches("")) {
-                    Toast.makeText(this, "Password Field Cannot Be Empty", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getResources().getString(R.string.pass_empty), Toast.LENGTH_SHORT).show();
                     passOk = false;
                 }
                 else
                     passOk = true;
             }
             else {
-                Toast.makeText(this, "Passwords Must Match", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.pass_not_match), Toast.LENGTH_SHORT).show();
                 passOk = false;
             }
 
         }catch(Exception e){
-            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
         if(serialOk && passOk){
 

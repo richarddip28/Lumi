@@ -168,7 +168,7 @@ public class BabyMenu extends AppCompatActivity {
                 Toast.LENGTH_LONG).show();
     }
     public void notificationsButtonClicked(View view){
-        nextScreen = new Intent(this, NotificationsMenu.class);
+        nextScreen = new Intent(this, MessageBoardScreen.class);
         startActivity(nextScreen);
     }
 

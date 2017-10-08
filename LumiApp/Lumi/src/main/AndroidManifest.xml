@@ -24,7 +24,8 @@
         <activity android:name=".NotificationsMenu" />
         <activity android:name=".TimerMenu" />
         <activity android:name=".MainMenuActivity" />
-        <activity android:name=".RegisterScreen"></activity>
+        <activity android:name=".RegisterScreen" />
+        <activity android:name=".MessageBoardScreen"></activity>
     </application>
 
 </manifest>

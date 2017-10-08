@@ -1,4 +1,6 @@
 <resources>
+
+    <!--Global-->
     <string name="app_name">Lumi</string>
 
 
@@ -29,6 +31,12 @@
     <string name="lumi_password_confirm">Confirm Password</string>
     <string name="confirm_reg">Confirm</string>
 
+    <string name="lumi_no_sn">Enter Lumi Serial Number</string>
+    <string name="lumi_not_full">Enter the Full 9 Digit Lumi Serial Number</string>
+    <string name="pass_empty">Password Field Cannot Be Empty</string>
+    <string name="pass_not_match">Passwords Must Match</string>
+
+
     <!--Baby Menu Screen-->
     <string name="mybaby">myBaby</string>
     <string name="automode">auto mode</string>
@@ -52,5 +60,10 @@
     <string name="rockabye_song">Rock a bye baby</string>
     <string name="twinkle_song">Twinkle Twinkle</string>
     <string name="lightReader">Light Reading</string>
+
+    <!--Message Board-->
+    <string name="sendButton">Send</string>
+    <string name="type_message_hint">Type Message</string>
+    <string name="messageboard_header">Message Board</string>
 
 </resources>
