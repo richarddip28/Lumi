@@ -84,7 +84,7 @@ public class MainMenuActivity extends AppCompatActivity {
         startActivity(nextScreen);
     }
     public void notificationsButtonClicked(View view){
-        nextScreen = new Intent(this, NotificationsMenu.class);
+        nextScreen = new Intent(this, MessageBoardScreen.class);
         startActivity(nextScreen);
     }
 

@@ -69,12 +69,12 @@
 
             <TextView
                 android:id="@+id/lumi_sn"
-                style="@style/TextViewTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:layout_marginRight="10dp"
                 android:text="@string/lumi_serial"
+                style="@style/TextViewTheme"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 

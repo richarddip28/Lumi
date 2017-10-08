@@ -182,5 +182,9 @@
     {
         "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
         "source": "C:\\Users\\Richard Dip\\.android\\build-cache\\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\\output\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\activity_message_board_screen.xml",
+        "source": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\src\\main\\res\\layout\\activity_message_board_screen.xml"
     }
 ]

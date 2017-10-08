@@ -35,6 +35,7 @@
         <activity android:name="ARKstudios.lumiapp.TimerMenu" />
         <activity android:name="ARKstudios.lumiapp.MainMenuActivity" />
         <activity android:name="ARKstudios.lumiapp.RegisterScreen" />
+        <activity android:name="ARKstudios.lumiapp.MessageBoardScreen" />
     </application>
 
 </manifest>

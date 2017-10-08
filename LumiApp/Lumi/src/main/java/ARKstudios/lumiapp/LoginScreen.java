@@ -95,7 +95,7 @@ public class LoginScreen extends AppCompatActivity {
                 passwordOk = true;
 
         }catch(Exception e){
-            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
 
 
