@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Oct 08 16:51:35 EDT 2017
+#Sun Oct 08 16:59:09 EDT 2017
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=C\:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\assets\\debug\\fonts\\Lato-Regular.ttf
