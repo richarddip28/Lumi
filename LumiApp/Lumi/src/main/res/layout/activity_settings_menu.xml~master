@@ -8,33 +8,6 @@
     tools:context="ARKstudios.lumiapp.SettingsMenu">
 
 
-    <FrameLayout
-        android:id="@id/notifSettings"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:text="@string/notifSetting"
-            android:textColor="@color/lumi_bg"
-            android:textSize="30sp"
-            android:onClick="notificationsButtonClicked"/>
-
-        <ToggleButton
-            android:id="@+id/toggleNotification"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="end"/>
-
-    </FrameLayout>
-
- 
 
     <ImageButton
         android:id="@+id/imageButton5"
@@ -152,12 +125,12 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="48sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:layout_marginBottom="20dp"
-                android:text="Enter Title here" />
+                android:text="@string/titleSetting" />
         </TableRow>
 
         <TableRow
@@ -165,28 +138,61 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/textSettings1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="24sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:text="@string/notifSetting" />
+                android:text="@string/notifSetting"
+                android:onClick="notificationsButtonClicked"/>
 
             <Switch
-                android:id="@+id/switch3"
+                android:id="@+id/notifSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Switch" />
+                />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@id/textSettings2"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/langSetting"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/lang_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/lang_array" />
+
+        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@id/textSettings3"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/aboutSetting"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+
     </TableLayout>
 
 </android.support.constraint.ConstraintLayout>
