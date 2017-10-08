@@ -80,6 +80,7 @@
 
             <EditText
                 android:id="@+id/editText6"
+                android:imeOptions="actionDone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_style"
@@ -105,6 +106,7 @@
 
             <EditText
                 android:id="@+id/editText7"
+                android:imeOptions="actionDone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_style"
@@ -128,6 +130,7 @@
 
             <EditText
                 android:id="@+id/editText8"
+                android:imeOptions="actionDone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_style"

@@ -11,12 +11,20 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class MessageBoardScreen extends AppCompatActivity {
 
     Typeface custom_font;
     TextView header, message,message_board;
+    String messagetoSend, currentTime, user;
     EditText textfield;
     Button send;
+    Date d;
+    SimpleDateFormat sdf;
 
 
     public void setFont(){
@@ -39,10 +47,14 @@ public class MessageBoardScreen extends AppCompatActivity {
         message_board = (TextView) findViewById(R.id.messageBoard);
         textfield = (EditText) findViewById(R.id.messageField);
         send = (Button) findViewById(R.id.sendButton);
+        d = new Date();
+        sdf = new SimpleDateFormat("hh:mm a");
+
 
         setFont();
 
-
+        //placeholder for future fetching
+        user = "Richard";
 
     }
 
@@ -51,9 +63,13 @@ public class MessageBoardScreen extends AppCompatActivity {
         try{
             if(textfield.getText().toString().matches(""))
                 return;
-            else
-                message_board.setText(textfield.getText().toString());
+            else {
+                messagetoSend = textfield.getText().toString();
+                currentTime = sdf.format(d);
+                message_board.setText(user +"  :  " + messagetoSend + " [" +currentTime+ "]");
+                textfield.setText("");
 
+            }
         }catch(Exception e){
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
 
