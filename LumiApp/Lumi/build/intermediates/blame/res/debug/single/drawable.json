@@ -68,6 +68,10 @@
         "source": "C:\\Users\\Richard Dip\\.android\\build-cache\\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
     {
+        "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\drawable\\edittext_style.xml",
+        "source": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\src\\main\\res\\drawable\\edittext_style.xml"
+    },
+    {
         "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
         "source": "C:\\Users\\Richard Dip\\.android\\build-cache\\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
@@ -110,6 +114,10 @@
     {
         "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
         "source": "C:\\Users\\Richard Dip\\.android\\build-cache\\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\drawable\\serial_example.png",
+        "source": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\src\\main\\res\\drawable\\serial_example.png"
     },
     {
         "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_blue.jpeg",

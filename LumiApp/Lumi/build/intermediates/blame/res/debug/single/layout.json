@@ -16,6 +16,10 @@
         "source": "C:\\Users\\Richard Dip\\.android\\build-cache\\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\\output\\res\\layout\\notification_template_part_time.xml"
     },
     {
+        "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register_screen.xml",
+        "source": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\src\\main\\res\\layout\\activity_register_screen.xml"
+    },
+    {
         "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
         "source": "C:\\Users\\Richard Dip\\.android\\build-cache\\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\\output\\res\\layout\\abc_screen_toolbar.xml"
     },

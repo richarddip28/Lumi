@@ -34,6 +34,7 @@
         <activity android:name="ARKstudios.lumiapp.NotificationsMenu" />
         <activity android:name="ARKstudios.lumiapp.TimerMenu" />
         <activity android:name="ARKstudios.lumiapp.MainMenuActivity" />
+        <activity android:name="ARKstudios.lumiapp.RegisterScreen" />
 
         <provider
             android:name="com.android.tools.fd.runtime.InstantRunContentProvider"
