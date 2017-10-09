@@ -9,6 +9,11 @@
         <item>Rock a bye baby</item>
         <item>Twinkle Twinkle</item>
     </string-array>
+    <string-array name="user_list">
+        <item>Choose User</item>
+        <item>John</item>
+        <item>Jane</item>
+    </string-array>
     <attr format="reference" name="constraintSet"/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -466,6 +471,7 @@
     <string name="cryingmode_description">applying this mode allows lumi to automatically alert the app, as well as display a customized lamp brightness and color setting</string>
     <string name="langSetting">Language</string>
     <string name="lightReader">Light Reading</string>
+    <string name="logged_toast">Logged in as\u0020</string>
     <string name="login">Log In</string>
     <string name="lullabies">lullabies</string>
     <string name="lumi_no_sn">Enter Lumi Serial Number</string>
@@ -477,6 +483,7 @@
     <string name="mybaby">myBaby</string>
     <string name="name_error">You did not enter a Name</string>
     <string name="name_hint">Enter Lumi ID</string>
+    <string name="need_user">Choose A User before continuing</string>
     <string name="notifSetting">Notifications</string>
     <string name="pass_empty">Password Field Cannot Be Empty</string>
     <string name="pass_hint">Enter Password</string>
