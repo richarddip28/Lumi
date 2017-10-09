@@ -104,13 +104,6 @@ public class BabyMenu extends AppCompatActivity {
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         songList.setAdapter(adapter);
 
-        adapter = ArrayAdapter.createFromResource(this, R.array.song_list, R.layout.spinner_item);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        songList.setAdapter(adapter);
-
-
-
-
     }
 
     private void vibratePhone() {

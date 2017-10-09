@@ -36,6 +36,15 @@
     <string name="pass_empty">Password Field Cannot Be Empty</string>
     <string name="pass_not_match">Passwords Must Match</string>
 
+    <!--Main Menu Screen-->
+    <string-array name="user_list">
+        <item>Choose User</item>
+        <item>John</item>
+        <item>Jane</item>
+    </string-array>
+
+    <string name="logged_toast">Logged in as\u0020</string>
+    <string name="need_user">Choose A User before continuing</string>
 
     <!--Baby Menu Screen-->
     <string name="mybaby">myBaby</string>

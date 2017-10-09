@@ -6,19 +6,19 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1507497401950"
+    timestamp="1507518425190"
     token="-6194178728661506796"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="158" />
+        duration="182" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="18" />
+        duration="17" />
     <task
         name="verifier"
         duration="3" />
@@ -29,17 +29,11 @@
 
     <build
         build-mode="FULL"
-        timestamp="1507493459152"
+        timestamp="1507507397115"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
         <artifact
             location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\outputs\apk\Lumi-debug.apk"
-            type="SPLIT_MAIN" />
         <artifact
             location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
@@ -62,15 +56,21 @@
             location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
+        <artifact
+            location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\outputs\apk\Lumi-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1507495734739"
+        timestamp="1507515909086"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -78,7 +78,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1507496348672"
+        timestamp="1507517555169"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\outputs\apk\Lumi-debug.apk"
@@ -86,7 +86,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1507497401950"
+        timestamp="1507518425190"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\build\intermediates\split-apk\debug\slices\slice_3.apk"
