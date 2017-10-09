@@ -1,5 +1,6 @@
 package ARKstudios.lumiapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -17,11 +18,15 @@ public class RegisterScreen extends AppCompatActivity {
 
     Typeface custom_font;
     TextView reg_title,reg_header,lumi_sn,lumi_pass,lumi_pass_confirm;
-    EditText lumi_serial, password, password2;
+    EditText SERIAL_NO, SERIAL_PASS, CON_PASS;
     Boolean serialOk, passOk;
     Intent nextScreen;
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
+    Context ctx = this;
+    DatabaseOperations DB;
+    String serial_no, serial_pass, con_pass;
+
 
     public void setFont(){
 
@@ -41,12 +46,13 @@ public class RegisterScreen extends AppCompatActivity {
         lumi_sn = (TextView) findViewById(R.id.lumi_sn);
         lumi_pass = (TextView) findViewById(R.id.lumi_pass);
         lumi_pass_confirm = (TextView) findViewById(R.id.lumi_pass_confirm);
-        lumi_serial = (EditText) findViewById(R.id.editText6);
-        password = (EditText) findViewById(R.id.editText7);
-        password2 = (EditText) findViewById(R.id.editText8);
+        SERIAL_NO = (EditText) findViewById(R.id.editText6);
+        SERIAL_PASS = (EditText) findViewById(R.id.editText7);
+        CON_PASS = (EditText) findViewById(R.id.editText8);
         nextScreen = new Intent(this, MainMenuActivity.class);
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
+        DB = new DatabaseOperations(ctx);
 
         setFont();
 
@@ -54,15 +60,18 @@ public class RegisterScreen extends AppCompatActivity {
 
     public void getUserInfo(){
 
-        editor.putString("lumi_serial_number", lumi_serial.getText().toString());
-        editor.putString("password_final", password.getText().toString());
+//        editor.putString("lumi_serial_number", SERIAL_NO.getText().toString());
+//        editor.putString("password_final", SERIAL_PASS.getText().toString());
+        serial_no = SERIAL_NO.getText().toString();
+        serial_pass = SERIAL_PASS.getText().toString();
+        con_pass = CON_PASS.getText().toString();
 
     }
     public void tryRegister(View view){
 
         try{
-            if(lumi_serial.getText().toString().length() < 9){
-                if(lumi_serial.getText().toString().matches(""))
+            if(SERIAL_NO.getText().toString().length() < 9){
+                if(SERIAL_NO.getText().toString().matches(""))
                     Toast.makeText(this, getResources().getString(R.string.lumi_no_sn), Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(this, getResources().getString(R.string.lumi_not_full), Toast.LENGTH_SHORT).show();
@@ -73,8 +82,8 @@ public class RegisterScreen extends AppCompatActivity {
                 serialOk=true;
 
 
-            if (password.getText().toString().matches(password2.getText().toString())){
-                if(password.getText().toString().matches("")) {
+            if (SERIAL_PASS.getText().toString().matches(CON_PASS.getText().toString())){
+                if(SERIAL_PASS.getText().toString().matches("")) {
                     Toast.makeText(this, getResources().getString(R.string.pass_empty), Toast.LENGTH_SHORT).show();
                     passOk = false;
                 }
@@ -91,8 +100,14 @@ public class RegisterScreen extends AppCompatActivity {
         }
         if(serialOk && passOk){
 
-            getUserInfo();
-            startActivity(nextScreen);
+            try {
+                getUserInfo();
+                DB.putInformation(DB, serial_no, serial_pass);
+                Toast.makeText(this, "Database successful", Toast.LENGTH_LONG).show();
+                startActivity(nextScreen);
+            }catch(Exception e) {
+                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+            }
         }
 
     }
