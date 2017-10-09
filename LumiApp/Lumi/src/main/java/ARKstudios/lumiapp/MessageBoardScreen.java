@@ -40,7 +40,6 @@ public class MessageBoardScreen extends AppCompatActivity {
     public void setFont(){
 
         header.setTypeface(custom_font);
-//        message.setTypeface(custom_font);
         textfield.setTypeface(custom_font);
         send.setTypeface(custom_font);
 
@@ -53,11 +52,9 @@ public class MessageBoardScreen extends AppCompatActivity {
 
         custom_font = Typeface.createFromAsset(getAssets(),  "fonts/Lato-Black.ttf");
         header = (TextView) findViewById(R.id.textView2);
-//        message = (TextView) findViewById(R.id.messageBoard);
-//        message_board = (TextView) findViewById(R.id.messageBoard);
         textfield = (EditText) findViewById(R.id.messageField);
         send = (Button) findViewById(R.id.sendButton);
-        d = new Date();
+//        d = new Date();
         sdf = new SimpleDateFormat("hh:mm a");
         chatList = new ArrayList<String>();
         list = (ListView) findViewById(R.id.message_List);
@@ -71,7 +68,7 @@ public class MessageBoardScreen extends AppCompatActivity {
 
     public void addItems(){
 
-        chatList.add(user +"  :  " + messagetoSend + " [" +currentTime+ "]");
+        chatList.add(user +" :  " + messagetoSend + " [" +currentTime+ "]");
         adapter.notifyDataSetChanged();
 
     }
@@ -82,6 +79,7 @@ public class MessageBoardScreen extends AppCompatActivity {
                 return;
             else {
                 messagetoSend = textfield.getText().toString();
+                d = new Date();
                 currentTime = sdf.format(d);
                 addItems();
                 textfield.setText("");
