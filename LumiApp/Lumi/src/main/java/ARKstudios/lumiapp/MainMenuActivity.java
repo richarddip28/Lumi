@@ -49,6 +49,14 @@ public class MainMenuActivity extends AppCompatActivity {
     Context context;
     Set set;
 
+    public void clearCache(View view){
+
+        list = (Arrays.asList(getResources().getStringArray(R.array.user_list)));
+        editor.clear();
+        editor.commit();
+        adapter.notifyDataSetChanged();
+    }
+
     public void init(){
 
         custom_font = Typeface.createFromAsset(getAssets(),  "fonts/Lato-Black.ttf");
@@ -216,6 +224,12 @@ public class MainMenuActivity extends AppCompatActivity {
                             Toast.makeText(getBaseContext(), getResources().getString(R.string.logged_toast)+userList.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                             nextscreenOk=true;
                             break;
+                        case 3:
+                            editor.putString("logged_user", userList.getSelectedItem().toString());
+                            editor.commit();
+                            Toast.makeText(getBaseContext(), getResources().getString(R.string.logged_toast)+userList.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                            nextscreenOk=true;
+                            break;
                         default:
                             nextscreenOk=false;
                             break;
@@ -231,4 +245,10 @@ public class MainMenuActivity extends AppCompatActivity {
             });
 
         }//end onCreate
+
+        @Override
+        public void onResume(){
+            super.onResume();
+
+        }
     }//end class

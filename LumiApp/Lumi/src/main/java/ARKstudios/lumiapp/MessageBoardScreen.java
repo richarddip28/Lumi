@@ -108,4 +108,9 @@ public class MessageBoardScreen extends AppCompatActivity {
         list.setAdapter(adapter);
 
     }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+    }
 }

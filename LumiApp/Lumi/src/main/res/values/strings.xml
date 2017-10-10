@@ -72,6 +72,9 @@
     <string name="twinkle_song">Twinkle Twinkle</string>
     <string name="lightReader">Light Reading</string>
 
+    <string name="trigger_light_low">Low light detected. Lumi Lights ON</string>
+    <string name="trigger_light_high">High light detected. Lumi Lights OFF</string>
+
     <!--Message Board-->
     <string name="sendButton">Send</string>
     <string name="type_message_hint">Type Message</string>

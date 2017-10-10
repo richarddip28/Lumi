@@ -27,17 +27,17 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 public class BabyMenu extends AppCompatActivity {
 
-    public ImageButton menu;
-    public ImageButton settings;
-    public ImageButton color;
-    public ImageButton baby;
-    public ImageButton notifications;
-    public ImageButton timer;
+    public ImageButton menu, settings, color, baby, notifications, timer;
     Intent nextScreen;
-    Animation fadeIn;
-    Animation fadeOut;
+    Animation fadeIn, fadeOut;
     TextView babyTitle,tf1,tf2,tf3,tf4,tf5,tf6;
     MediaPlayer mp;
     Spinner songList;
@@ -49,8 +49,11 @@ public class BabyMenu extends AppCompatActivity {
     TextView light;
     ArrayAdapter adapter;
     Typeface custom_font;
-    SharedPreferences prefs;
-    SharedPreferences.Editor editor;
+    ArrayList<String> chatList;
+    Set<String> set;
+    Date d;
+    SimpleDateFormat sdf;
+    String currentTime;
 
     public void setFont(){
 
@@ -69,8 +72,8 @@ public class BabyMenu extends AppCompatActivity {
 
     public void init(){
 
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        editor = prefs.edit();
+        sdf = new SimpleDateFormat("hh:mm a");
+
         menu = (ImageButton) findViewById(R.id.imageButton5);
         settings = (ImageButton) findViewById(R.id.imageButton7);
         color = (ImageButton) findViewById(R.id.imageButton6);
@@ -187,9 +190,17 @@ public class BabyMenu extends AppCompatActivity {
             float x = event.values[0];
 
             light.setText((int)x + " lux");
+            d = new Date();
+            currentTime = sdf.format(d);
 
-            if(x<1000 && s.isChecked())
+
+            if((int)x<5000 && s.isChecked()) {
                 vibratePhone();
+            }
+            if((int)x>=20000 && s.isChecked()){
+                vibratePhone();
+            }
+
         }
     };
 
