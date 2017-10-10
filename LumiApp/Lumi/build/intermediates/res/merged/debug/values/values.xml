@@ -11,8 +11,6 @@
     </string-array>
     <string-array name="user_list">
         <item>Choose User</item>
-        <item>John</item>
-        <item>Jane</item>
     </string-array>
     <attr format="reference" name="constraintSet"/>
     <attr format="reference" name="drawerArrowStyle"/>
@@ -122,6 +120,7 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
+    <color name="black">#80000000</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -462,6 +461,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="aboutSetting">About</string>
+    <string name="add_user">Add User</string>
     <string name="adjustpref">adjust sensitivity</string>
     <string name="app_name">Lumi</string>
     <string name="automode">auto mode</string>
@@ -500,8 +500,19 @@
     <string name="twinkle_song">Twinkle Twinkle</string>
     <string name="type_message_hint">Type Message</string>
     <string name="user_name">%1$s</string>
+    <string name="userfield_error">Username Field Cannot Be Empty</string>
+    <string name="userfield_short">Username Must Be Minimum 3 Characters</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/primary_material_dark</item>
+        <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
+        <item name="colorAccent">@color/accent_material_light</item>
+        <item name="android:background">@color/primary_material_dark</item>
+        <item name="android:textColor">@color/white</item>
+
+        <item name="borderlessButtonStyle">@style/Widget.AppCompat.Button.Borderless.Colored</item>
+    </style>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">

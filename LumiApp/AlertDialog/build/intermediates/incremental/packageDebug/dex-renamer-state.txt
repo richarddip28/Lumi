@@ -1,0 +1,4 @@
+#Tue Oct 10 00:17:25 EDT 2017
+base.0=C\:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\AlertDialog\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=C\:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\AlertDialog\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

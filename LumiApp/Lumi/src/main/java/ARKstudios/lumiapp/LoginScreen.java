@@ -3,8 +3,6 @@ package ARKstudios.lumiapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.VibrationEffect;
 import android.os.Vibrator;

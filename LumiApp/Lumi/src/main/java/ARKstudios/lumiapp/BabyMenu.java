@@ -2,7 +2,7 @@ package ARKstudios.lumiapp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -12,9 +12,9 @@ import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -26,11 +26,6 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import static ARKstudios.lumiapp.R.id.parent;
-import static ARKstudios.lumiapp.R.styleable.CompoundButton;
 
 public class BabyMenu extends AppCompatActivity {
 
@@ -54,6 +49,8 @@ public class BabyMenu extends AppCompatActivity {
     TextView light;
     ArrayAdapter adapter;
     Typeface custom_font;
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
 
     public void setFont(){
 
@@ -72,6 +69,8 @@ public class BabyMenu extends AppCompatActivity {
 
     public void init(){
 
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = prefs.edit();
         menu = (ImageButton) findViewById(R.id.imageButton5);
         settings = (ImageButton) findViewById(R.id.imageButton7);
         color = (ImageButton) findViewById(R.id.imageButton6);

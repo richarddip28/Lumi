@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("ARKstudios.lumiapp", appContext.getPackageName());
+        assertEquals("arkstudios.lumiapp", appContext.getPackageName());
     }
 }

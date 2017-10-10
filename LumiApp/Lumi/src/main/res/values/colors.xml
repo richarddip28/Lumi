@@ -6,4 +6,5 @@
     <color name="lumi_bg">#0e1c43</color>
     <color name="white">#FFFFFF</color>
     <color name="my_spinner_text_color">#FFFFFF</color>
+    <color name="black">#80000000</color>
 </resources>

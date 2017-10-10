@@ -39,12 +39,14 @@
     <!--Main Menu Screen-->
     <string-array name="user_list">
         <item>Choose User</item>
-        <item>John</item>
-        <item>Jane</item>
     </string-array>
 
     <string name="logged_toast">Logged in as\u0020</string>
     <string name="need_user">Choose A User before continuing</string>
+
+    <string name="add_user">Add User</string>
+    <string name="userfield_error">Username Field Cannot Be Empty</string>
+    <string name="userfield_short">Username Must Be Minimum 3 Characters</string>
 
     <!--Baby Menu Screen-->
     <string name="mybaby">myBaby</string>
