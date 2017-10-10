@@ -1,7 +1,6 @@
 package ARKstudios.lumiapp;
 
 import android.provider.BaseColumns;
-import android.provider.Telephony;
 
 /**
  * Created by Richard Dip on 10/9/2017.

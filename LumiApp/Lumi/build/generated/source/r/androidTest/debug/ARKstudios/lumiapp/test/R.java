@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package ARKstudios.lumiapp.test;
+package arkstudios.lumiapp.test;
 
 public final class R {
     public static final class attr {

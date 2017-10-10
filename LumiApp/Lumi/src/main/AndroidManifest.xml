@@ -11,21 +11,21 @@
         android:roundIcon="@mipmap/icon_lumi_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginScreen">
+        <activity android:name="ARKstudios.lumiapp.LoginScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingsMenu" />
-        <activity android:name=".ColorMenu" />
-        <activity android:name=".BabyMenu" />
-        <activity android:name=".NotificationsMenu" />
-        <activity android:name=".TimerMenu" />
-        <activity android:name=".MainMenuActivity" />
-        <activity android:name=".RegisterScreen" />
-        <activity android:name=".MessageBoardScreen"></activity>
+        <activity android:name="ARKstudios.lumiapp.SettingsMenu" />
+        <activity android:name="ARKstudios.lumiapp.ColorMenu" />
+        <activity android:name="ARKstudios.lumiapp.BabyMenu" />
+        <activity android:name="ARKstudios.lumiapp.NotificationsMenu" />
+        <activity android:name="ARKstudios.lumiapp.TimerMenu" />
+        <activity android:name="ARKstudios.lumiapp.MainMenuActivity" />
+        <activity android:name="ARKstudios.lumiapp.RegisterScreen" />
+        <activity android:name="ARKstudios.lumiapp.MessageBoardScreen"></activity>
     </application>
 
 </manifest>

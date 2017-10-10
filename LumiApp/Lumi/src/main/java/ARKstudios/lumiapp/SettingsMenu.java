@@ -3,20 +3,16 @@ package ARKstudios.lumiapp;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
-import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 public class SettingsMenu extends AppCompatActivity {
 

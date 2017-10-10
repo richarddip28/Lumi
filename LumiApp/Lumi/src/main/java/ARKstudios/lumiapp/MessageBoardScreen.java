@@ -9,23 +9,20 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.app.ListActivity;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MessageBoardScreen extends AppCompatActivity {
 
     Typeface custom_font;
-    TextView header, message,message_board;
+    TextView header;
     String messagetoSend, currentTime, user;
     EditText textfield;
     Button send;
@@ -35,6 +32,8 @@ public class MessageBoardScreen extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     ListView list;
     SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+    Set<String> set;
 
 
     public void setFont(){
@@ -56,19 +55,26 @@ public class MessageBoardScreen extends AppCompatActivity {
         send = (Button) findViewById(R.id.sendButton);
 //        d = new Date();
         sdf = new SimpleDateFormat("hh:mm a");
-        chatList = new ArrayList<String>();
         list = (ListView) findViewById(R.id.message_List);
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
-
+        editor = prefs.edit();
+        set = new HashSet<String>();
         setFont();
 
         user = prefs.getString("logged_user", "no_id");
+        chatList = new ArrayList<String>();
+        if(prefs.getStringSet("messageLog", null) != null)
+            chatList.addAll(prefs.getStringSet("messageLog", null));
+
 
     }
 
     public void addItems(){
 
         chatList.add(user +" :  " + messagetoSend + " [" +currentTime+ "]");
+        set.addAll(chatList);
+        editor.putStringSet("messageLog", set);
+        editor.commit();
         adapter.notifyDataSetChanged();
 
     }
@@ -96,6 +102,7 @@ public class MessageBoardScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_board_screen);
         init();
+
 
         adapter = new ArrayAdapter<String>(this, R.layout.custom_list,R.id.list_content,chatList);
         list.setAdapter(adapter);

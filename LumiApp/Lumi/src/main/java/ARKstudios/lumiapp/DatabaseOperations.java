@@ -6,8 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import static android.R.attr.name;
-
 
 public class DatabaseOperations extends SQLiteOpenHelper {
 
