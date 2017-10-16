@@ -41,7 +41,7 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ri
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:9:9-41
 	android:theme
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:13:9-40
-activity#ARKstudios.lumiapp.LoginScreen
+activity#arkstudios.lumiapp.LoginScreen
 ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:14:19-64
@@ -55,35 +55,35 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:18:27-74
-activity#ARKstudios.lumiapp.SettingsMenu
+activity#arkstudios.lumiapp.SettingsMenu
 ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:21:9-68
 	android:name
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:21:19-65
-activity#ARKstudios.lumiapp.ColorMenu
+activity#arkstudios.lumiapp.ColorMenu
 ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:22:9-65
 	android:name
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:22:19-62
-activity#ARKstudios.lumiapp.BabyMenu
+activity#arkstudios.lumiapp.BabyMenu
 ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:23:9-64
 	android:name
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:23:19-61
-activity#ARKstudios.lumiapp.NotificationsMenu
+activity#arkstudios.lumiapp.NotificationsMenu
 ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:24:9-73
 	android:name
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:24:19-70
-activity#ARKstudios.lumiapp.TimerMenu
+activity#arkstudios.lumiapp.TimerMenu
 ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:25:9-65
 	android:name
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:25:19-62
-activity#ARKstudios.lumiapp.MainMenuActivity
+activity#arkstudios.lumiapp.MainMenuActivity
 ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:26:9-72
 	android:name
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:26:19-69
-activity#ARKstudios.lumiapp.RegisterScreen
+activity#arkstudios.lumiapp.RegisterScreen
 ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:27:9-70
 	android:name
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:27:19-67
-activity#ARKstudios.lumiapp.MessageBoardScreen
+activity#arkstudios.lumiapp.MessageBoardScreen
 ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:28:9-83
 	android:name
 		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:28:19-71

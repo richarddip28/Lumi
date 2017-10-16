@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/lumi_bg"
 
-    tools:context="ARKstudios.lumiapp.MainMenuActivity">
+    tools:context="arkstudios.lumiapp.MainMenuActivity">
 
     <ImageView
         android:id="@+id/imageView"
