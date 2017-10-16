@@ -1,8 +1,7 @@
-package ARKstudios.lumiapp;
+package arkstudios.lumiapp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -14,7 +13,6 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -27,23 +25,17 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import static ARKstudios.lumiapp.R.id.parent;
-import static ARKstudios.lumiapp.R.styleable.CompoundButton;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Set;
 
 public class BabyMenu extends AppCompatActivity {
 
-    public ImageButton menu;
-    public ImageButton settings;
-    public ImageButton color;
-    public ImageButton baby;
-    public ImageButton notifications;
-    public ImageButton timer;
+    public ImageButton menu, settings, color, baby, notifications, timer;
     Intent nextScreen;
-    Animation fadeIn;
-    Animation fadeOut;
-    TextView babyTitle;
+    Animation fadeIn, fadeOut;
+    TextView babyTitle,tf1,tf2,tf3,tf4,tf5,tf6;
     MediaPlayer mp;
     Spinner songList;
     SensorManager sensorManager;
@@ -53,8 +45,31 @@ public class BabyMenu extends AppCompatActivity {
     Switch s;
     TextView light;
     ArrayAdapter adapter;
+    Typeface custom_font;
+    ArrayList<String> chatList;
+    Set<String> set;
+    Date d;
+    SimpleDateFormat sdf;
+    String currentTime;
+
+    public void setFont(){
+
+        custom_font = Typeface.createFromAsset(getAssets(),  "fonts/Lato-Black.ttf");
+
+        babyTitle.setTypeface(custom_font);
+        tf1.setTypeface(custom_font);
+        tf2.setTypeface(custom_font);
+        tf3.setTypeface(custom_font);
+        tf4.setTypeface(custom_font);
+        tf5.setTypeface(custom_font);
+        tf6.setTypeface(custom_font);
+
+
+    }
 
     public void init(){
+
+        sdf = new SimpleDateFormat("hh:mm a");
 
         menu = (ImageButton) findViewById(R.id.imageButton5);
         settings = (ImageButton) findViewById(R.id.imageButton7);
@@ -67,9 +82,16 @@ public class BabyMenu extends AppCompatActivity {
         fadeOut = AnimationUtils.loadAnimation(this,
                 android.R.anim.fade_out);
         babyTitle = (TextView) findViewById(R.id.babyTitle);
-        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/sunshine.ttf");
-        babyTitle.setTypeface(custom_font);
-        babyTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22);
+        tf1 = (TextView) findViewById(R.id.textView4);
+        tf2 = (TextView) findViewById(R.id.textView5);
+        tf3 = (TextView) findViewById(R.id.textView6);
+        tf4 = (TextView) findViewById(R.id.textView7);
+        tf5 = (TextView) findViewById(R.id.textView3);
+        tf6 = (TextView) findViewById(R.id.textView8);
+
+        setFont();
+
+
         songList = (Spinner) findViewById(R.id.spinner_song);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -80,13 +102,6 @@ public class BabyMenu extends AppCompatActivity {
         adapter = ArrayAdapter.createFromResource(this, R.array.song_list, R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         songList.setAdapter(adapter);
-
-        adapter = ArrayAdapter.createFromResource(this, R.array.song_list, R.layout.spinner_item);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        songList.setAdapter(adapter);
-
-
-
 
     }
 
@@ -145,7 +160,7 @@ public class BabyMenu extends AppCompatActivity {
                 Toast.LENGTH_LONG).show();
     }
     public void notificationsButtonClicked(View view){
-        nextScreen = new Intent(this, NotificationsMenu.class);
+        nextScreen = new Intent(this, MessageBoardScreen.class);
         startActivity(nextScreen);
     }
 
@@ -172,9 +187,17 @@ public class BabyMenu extends AppCompatActivity {
             float x = event.values[0];
 
             light.setText((int)x + " lux");
+            d = new Date();
+            currentTime = sdf.format(d);
 
-            if(x<1000 && s.isChecked())
+
+            if((int)x<5000 && s.isChecked()) {
                 vibratePhone();
+            }
+            if((int)x>=20000 && s.isChecked()){
+                vibratePhone();
+            }
+
         }
     };
 

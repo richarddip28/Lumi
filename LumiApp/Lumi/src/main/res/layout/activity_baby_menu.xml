@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lumi_bg"
-    tools:context="ARKstudios.lumiapp.BabyMenu">
+    tools:context="arkstudios.lumiapp.BabyMenu">
 
     <ImageButton
         android:id="@+id/imageButton5"
@@ -69,17 +69,19 @@
     <ImageButton
         android:id="@+id/imageButton9"
         android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="0dp"
         android:layout_marginRight="8dp"
         android:background="@null"
         android:onClick="notificationsButtonClicked"
         android:scaleType="centerCrop"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
         app:layout_constraintRight_toLeftOf="@+id/imageButton8"
-        app:srcCompat="@drawable/notifications"
-        android:layout_marginEnd="8dp" />
+        app:srcCompat="@drawable/messageboard"
+        android:layout_marginEnd="8dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton8"
+        app:layout_constraintTop_toTopOf="@+id/imageButton8" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -112,11 +114,11 @@
 
         <TextView
             android:id="@+id/babyTitle"
+            style="@style/TextViewTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/mybaby"
-            android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold" />
 
@@ -126,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/automode"
-            android:textColor="@color/white"
+            style="@style/TextViewTheme"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -136,7 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="@string/automode_description"
-            android:textColor="@color/white"
+            style="@style/TextViewTheme"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -154,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="@string/cryingmode"
-            android:textColor="@color/white"
+            style="@style/TextViewTheme"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -164,7 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/cryingmode_description"
-            android:textColor="@color/white"
+            style="@style/TextViewTheme"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -179,7 +181,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/adjustpref"
-            android:textColor="@color/white"
+            style="@style/TextViewTheme"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -187,7 +189,7 @@
             android:id="@+id/light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            style="@style/TextViewTheme"
             android:textSize="14sp"
             android:visibility="invisible"
             android:textStyle="bold"
@@ -215,7 +217,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:textColor="@color/white"
+            style="@style/TextViewTheme"
             android:textSize="20sp"
             android:textStyle="bold"
             android:text="@string/lullabies" />

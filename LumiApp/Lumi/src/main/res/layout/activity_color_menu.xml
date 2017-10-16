@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lumi_bg"
-    tools:context="ARKstudios.lumiapp.ColorMenu">
+    tools:context="arkstudios.lumiapp.ColorMenu">
 
     <ImageButton
         android:id="@+id/imageButton5"
@@ -76,7 +76,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageButton5"
         app:layout_constraintRight_toLeftOf="@+id/imageButton8"
-        app:srcCompat="@drawable/notifications" />
+        app:srcCompat="@drawable/messageboard" />
 
     <ImageButton
         android:id="@+id/imageButton3"

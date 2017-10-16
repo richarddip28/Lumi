@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ARKstudios.lumiapp.test" >
+    package="arkstudios.lumiapp.test" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -10,8 +10,8 @@
         android:name="android.support.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for ARKstudios.lumiapp"
-        android:targetPackage="ARKstudios.lumiapp" />
+        android:label="Tests for arkstudios.lumiapp"
+        android:targetPackage="arkstudios.lumiapp" />
 
     <application>
         <uses-library android:name="android.test.runner" />

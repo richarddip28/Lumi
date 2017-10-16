@@ -1,4 +1,4 @@
-package ARKstudios.lumiapp;
+package arkstudios.lumiapp;
 
 import org.junit.Test;
 

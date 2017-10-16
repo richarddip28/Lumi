@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lumi_bg"
-    tools:context="ARKstudios.lumiapp.SettingsMenu">
+    tools:context="arkstudios.lumiapp.SettingsMenu">
 
 
 
@@ -125,7 +125,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="48sp"
+                android:textSize="24sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
@@ -141,7 +141,7 @@
                 android:id="@+id/textSettings1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:text="@string/notifSetting"
@@ -163,7 +163,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="@string/langSetting"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -184,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="@string/aboutSetting"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 />
