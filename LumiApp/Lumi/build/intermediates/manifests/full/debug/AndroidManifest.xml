@@ -21,21 +21,21 @@
         android:roundIcon="@mipmap/icon_lumi_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="ARKstudios.lumiapp.LoginScreen" >
+        <activity android:name="arkstudios.lumiapp.LoginScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ARKstudios.lumiapp.SettingsMenu" />
-        <activity android:name="ARKstudios.lumiapp.ColorMenu" />
-        <activity android:name="ARKstudios.lumiapp.BabyMenu" />
-        <activity android:name="ARKstudios.lumiapp.NotificationsMenu" />
-        <activity android:name="ARKstudios.lumiapp.TimerMenu" />
-        <activity android:name="ARKstudios.lumiapp.MainMenuActivity" />
-        <activity android:name="ARKstudios.lumiapp.RegisterScreen" />
-        <activity android:name="ARKstudios.lumiapp.MessageBoardScreen" />
+        <activity android:name="arkstudios.lumiapp.SettingsMenu" />
+        <activity android:name="arkstudios.lumiapp.ColorMenu" />
+        <activity android:name="arkstudios.lumiapp.BabyMenu" />
+        <activity android:name="arkstudios.lumiapp.NotificationsMenu" />
+        <activity android:name="arkstudios.lumiapp.TimerMenu" />
+        <activity android:name="arkstudios.lumiapp.MainMenuActivity" />
+        <activity android:name="arkstudios.lumiapp.RegisterScreen" />
+        <activity android:name="arkstudios.lumiapp.MessageBoardScreen" />
     </application>
 
 </manifest>

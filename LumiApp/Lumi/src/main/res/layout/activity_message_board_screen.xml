@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lumi_bg"
-    tools:context="ARKstudios.lumiapp.MessageBoardScreen">
+    tools:context="arkstudios.lumiapp.MessageBoardScreen">
 
     <LinearLayout
         android:layout_width="0dp"
