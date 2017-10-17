@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="F:\MyLumi\Lumi\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="36417500c448e77ad3239c9000328703f236219f">
+        <dex dex="F:\MyLumi\Lumi\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_60ab84f7dc47cff6e68f3ba529c9bc252ad7a1a9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\MyLumi\Lumi\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="F:\MyLumi\Lumi\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5421559f30827112e2cae09f255ae9b92ed188f3\classes.dex" />
+    </item>
+
+</items>
