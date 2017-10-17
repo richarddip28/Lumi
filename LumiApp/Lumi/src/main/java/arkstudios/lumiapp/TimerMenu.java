@@ -1,15 +1,26 @@
 package arkstudios.lumiapp;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class TimerMenu extends AppCompatActivity {
+import java.util.concurrent.TimeUnit;
+
+public class TimerMenu extends AppCompatActivity implements OnClickListener {
 
     public ImageButton menu;
     public ImageButton settings;
@@ -20,6 +31,16 @@ public class TimerMenu extends AppCompatActivity {
     Intent nextScreen;
     Animation fadeIn;
     Animation fadeOut;
+
+    Context context;
+
+    TextView timerTextView;
+    EditText minutes;
+    Button setButton;
+    Button startButton;
+    Button addButton;
+    CountDownTimer countDownTimer;
+
 
     public void init(){
 
@@ -33,6 +54,12 @@ public class TimerMenu extends AppCompatActivity {
                 android.R.anim.fade_in);
         fadeOut = AnimationUtils.loadAnimation(this,
                 android.R.anim.fade_out);
+
+        timerTextView =(TextView)findViewById(R.id.timerTextView);
+        setButton = (Button)findViewById(R.id.setButton);
+        startButton = (Button)findViewById(R.id.startButton);
+        addButton = (Button)findViewById(R.id.addButton);
+
 
     }
 
@@ -97,5 +124,144 @@ public class TimerMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer_menu);
         init();
+
+
+        timerTextView = (TextView) findViewById(R.id.timerTextView);
+        minutes = (EditText) findViewById(R.id.editCustomTime);
+        startButton = (Button) findViewById(R.id.startButton);
+        setButton = (Button) findViewById(R.id.setButton);
+
+        setListeners();
+
+        addButton = (Button) findViewById(R.id.addButton);
+
+        /*addButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TimerMenu.this);
+                alertDialogBuilder.setTitle("Add User");
+                final EditText newCustomTimer = new EditText(this);
+                newCustomTimer.setBackgroundResource(R.drawable.edittext_style);
+                alertDialogBuilder
+                        .setView(newCustomTimer)
+                        .setCancelable(false)
+                        .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        })
+
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });*/
+
     }
+
+
+    //Set Listeners over button
+    private void setListeners() {
+        startButton.setOnClickListener(this);
+        setButton.setOnClickListener(this);
+    }
+
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.startButton:
+                //If CountDownTimer is null then start timer
+                if (countDownTimer == null) {
+                    String getMinutes = minutes.getText().toString();//Get minutes from edittext
+                    //Check validation over edittext
+                    if (!getMinutes.equals("") && getMinutes.length() > 0) {
+                        int noOfMinutes = Integer.parseInt(getMinutes) * 60 * 1000;//Convert minutes into milliseconds
+
+                        startTimer(noOfMinutes);//start countdown
+                        startButton.setText(getString(R.string.stop_timer));//Change Text
+                        setButton.setText(getString(R.string.reset_timer));
+
+                    } else
+                        Toast.makeText(TimerMenu.this, "Please enter no. of Minutes.", Toast.LENGTH_SHORT).show();//Display toast if edittext is empty
+                } else {
+                    //Else stop timer and change text
+                    stopCountdown();
+                    String getMinutes = minutes.getText().toString();
+                    timerTextView.setText(getMinutes);
+                    startButton.setText(getString(R.string.resumeButton));
+                }
+                break;
+
+            case R.id.setButton:
+                /*String getMinutes = minutes.getText().toString();
+                if (!getMinutes.equals("") && getMinutes.length() > 0) {
+                    long millisUntilFinished;
+                    long millis = millisUntilFinished;
+                    String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+                    timerTextView.setText(hms);
+                }*/
+                stopCountdown();//stop count down
+                startButton.setText(getString(R.string.startButton));//Change text to Start Timer7
+                setButton.setText(getString(R.string.setButton));
+                timerTextView.setText(getString(R.string.timerDefault));//Change Timer text
+                break;
+        }
+
+
+    }
+
+
+    //Stop Countdown method
+    private void stopCountdown() {
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+            countDownTimer = null;
+        }
+    }
+
+    //Start Countdown method
+    private void startTimer(int noOfMinutes) {
+        countDownTimer = new CountDownTimer(noOfMinutes, 1000) {
+            public void onTick(long millisUntilFinished) {
+                long millis = millisUntilFinished;
+                //Convert milliseconds into hour,minute and seconds
+                String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+                timerTextView.setText(hms);//set text
+            }
+
+            public void onFinish() {
+
+                //On finish change timer text
+                countDownTimer = null;//set CountDownTimer to null
+                startButton.setText(getString(R.string.startButton));//Change button text
+
+
+                /*AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                // set title
+                //alertDialogBuilder.setTitle("Timer Over.");
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("Check Baby food")
+                        .setCancelable(false)
+                        .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                // create alert dialog
+
+
+                // show it
+                alertDialog.show();*/
+            }
+        }.start();
+
+    }
+
 }

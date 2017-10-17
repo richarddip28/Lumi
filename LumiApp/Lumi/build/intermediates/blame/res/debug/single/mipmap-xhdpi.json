@@ -6,5 +6,13 @@
     {
         "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\icon_lumi.png",
         "source": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\src\\main\\res\\mipmap-xhdpi\\icon_lumi.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\icon_lumi.png",
+        "source": "C:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\src\\main\\res\\mipmap-xhdpi\\icon_lumi.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\icon_lumi_round.png",
+        "source": "C:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\src\\main\\res\\mipmap-xhdpi\\icon_lumi_round.png"
     }
 ]
