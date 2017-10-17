@@ -79,5 +79,12 @@
     <string name="sendButton">Send</string>
     <string name="type_message_hint">Type Message</string>
     <string name="messageboard_header">Message Board</string>
+    <string name="titleSetting">Settings</string>
+    <string name="setButton">Set</string>
+    <string name="timerDefault">00:00:00</string>
+    <string name="startButton">Start</string>
+    <string name="reset_timer">Reset</string>
+    <string name="stop_timer">Stop</string>
+    <string name="resumeButton">Resume</string>
 
 </resources>
