@@ -40,20 +40,20 @@
         "source": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\src\\main\\res\\layout\\activity_main_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
-        "source": "C:\\Users\\Richard Dip\\.android\\build-cache\\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\activity_notifications_menu.xml",
-        "source": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\src\\main\\res\\layout\\activity_notifications_menu.xml"
+        "merged": "C:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\user\\.android\\build-cache\\acb6e3c4493d71f9ccd03264fe551a1a2a42fa05\\output\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
         "source": "C:\\Users\\Richard Dip\\.android\\build-cache\\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "C:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\user\\.android\\build-cache\\acb6e3c4493d71f9ccd03264fe551a1a2a42fa05\\output\\res\\layout\\notification_template_part_time.xml"
+        "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\activity_notifications_menu.xml",
+        "source": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\src\\main\\res\\layout\\activity_notifications_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "C:\\Users\\Richard Dip\\.android\\build-cache\\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "C:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",

@@ -1,5 +1,8 @@
 package arkstudios.lumiapp;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -28,6 +31,8 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
     Intent nextScreen;
     Animation fadeIn;
     Animation fadeOut;
+
+    Context context;
 
     TextView timerTextView;
     EditText minutes;
@@ -126,8 +131,36 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
         startButton = (Button) findViewById(R.id.startButton);
         setButton = (Button) findViewById(R.id.setButton);
 
-
         setListeners();
+
+        addButton = (Button) findViewById(R.id.addButton);
+
+        /*addButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TimerMenu.this);
+                alertDialogBuilder.setTitle("Add User");
+                final EditText newCustomTimer = new EditText(this);
+                newCustomTimer.setBackgroundResource(R.drawable.edittext_style);
+                alertDialogBuilder
+                        .setView(newCustomTimer)
+                        .setCancelable(false)
+                        .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        })
+
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });*/
 
     }
 
@@ -142,7 +175,6 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
         switch (v.getId()) {
             case R.id.startButton:
                 //If CountDownTimer is null then start timer
-                setButton.setText(getString(R.string.reset_timer));
                 if (countDownTimer == null) {
                     String getMinutes = minutes.getText().toString();//Get minutes from edittext
                     //Check validation over edittext
@@ -151,6 +183,7 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
 
                         startTimer(noOfMinutes);//start countdown
                         startButton.setText(getString(R.string.stop_timer));//Change Text
+                        setButton.setText(getString(R.string.reset_timer));
 
                     } else
                         Toast.makeText(TimerMenu.this, "Please enter no. of Minutes.", Toast.LENGTH_SHORT).show();//Display toast if edittext is empty
@@ -202,9 +235,30 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
 
             public void onFinish() {
 
-                timerTextView.setText("TIME'S UP!!"); //On finish change timer text
+                //On finish change timer text
                 countDownTimer = null;//set CountDownTimer to null
                 startButton.setText(getString(R.string.startButton));//Change button text
+
+
+                /*AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                // set title
+                //alertDialogBuilder.setTitle("Timer Over.");
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("Check Baby food")
+                        .setCancelable(false)
+                        .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                // create alert dialog
+
+
+                // show it
+                alertDialog.show();*/
             }
         }.start();
 

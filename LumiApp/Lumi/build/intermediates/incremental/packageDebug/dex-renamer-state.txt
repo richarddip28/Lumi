@@ -1,4 +1,7 @@
-#Mon Oct 16 01:08:11 EDT 2017
-base.0=C\:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
-renamed.0=classes.dex
-file.0=C\:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+#Mon Oct 16 22:03:14 EDT 2017
+base.0=C\:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_eda79a60674dc0d11c551db145d2cc14542d61fe
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_3d6430e45fb9acb4fb5a0510f1b27650865e2d18\\classes.dex
+base.1=C\:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_3d6430e45fb9acb4fb5a0510f1b27650865e2d18
+file.0=C\:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_eda79a60674dc0d11c551db145d2cc14542d61fe\\classes.dex
