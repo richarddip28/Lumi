@@ -3,20 +3,16 @@ package arkstudios.lumiapp;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
-import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 public class SettingsMenu extends AppCompatActivity {
 
@@ -29,7 +25,6 @@ public class SettingsMenu extends AppCompatActivity {
     Intent nextScreen;
     Animation fadeIn;
     Animation fadeOut;
-    ArrayAdapter adapter;
 
     protected Vibrator vibrate;
 
@@ -46,7 +41,6 @@ public class SettingsMenu extends AppCompatActivity {
                 android.R.anim.fade_in);
         fadeOut = AnimationUtils.loadAnimation(this,
                 android.R.anim.fade_out);
-
 
     }
 
@@ -95,7 +89,7 @@ public class SettingsMenu extends AppCompatActivity {
         startActivity(nextScreen);
     }
     public void notificationsButtonClicked(View view){
-        nextScreen = new Intent(this, NotificationsMenu.class);
+        nextScreen = new Intent(this, MessageBoardScreen.class);
         startActivity(nextScreen);
     }
 
@@ -119,8 +113,8 @@ public class SettingsMenu extends AppCompatActivity {
         }
 
 
-        Switch notifSwitch = (Switch) findViewById(R.id.notifSwitch);
-        notifSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Switch notifToggle = (Switch) findViewById(R.id.switch3);
+        notifToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
                 Context context = getApplicationContext();
@@ -147,10 +141,13 @@ public class SettingsMenu extends AppCompatActivity {
             }
         });
 
-        Spinner language = (Spinner) findViewById(R.id.lang_spinner);
-
-        adapter = ArrayAdapter.createFromResource(this, R.array.lang_array, R.layout.spinner_item);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        language.setAdapter(adapter);
+//        Spinner spinner = (Spinner) findViewById(R.id.lang_spinner);
+//
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.lang_array, android.R.layout.simple_spinner_item);
+//
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        spinner.setAdapter(adapter);
     }
 }

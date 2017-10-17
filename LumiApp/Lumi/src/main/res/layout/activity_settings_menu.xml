@@ -8,6 +8,33 @@
     tools:context="arkstudios.lumiapp.SettingsMenu">
 
 
+    <FrameLayout
+        android:id="@id/notifSettings"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:text="@string/notifSetting"
+            android:textColor="@color/lumi_bg"
+            android:textSize="30sp"
+            android:onClick="notificationsButtonClicked"/>
+
+        <ToggleButton
+            android:id="@+id/toggleNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="end"/>
+
+    </FrameLayout>
+
+ 
 
     <ImageButton
         android:id="@+id/imageButton5"
@@ -80,7 +107,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageButton5"
         app:layout_constraintRight_toLeftOf="@+id/imageButton8"
-        app:srcCompat="@drawable/notifications"
+        app:srcCompat="@drawable/messageboard"
         android:layout_marginEnd="8dp" />
 
     <ImageButton
@@ -125,12 +152,12 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
+                android:textSize="14sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:layout_marginBottom="20dp"
-                android:text="@string/titleSetting" />
+                android:text="Enter Title here" />
         </TableRow>
 
         <TableRow
@@ -138,61 +165,28 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:id="@+id/textSettings1"
+                android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:text="@string/notifSetting"
-                android:onClick="notificationsButtonClicked"/>
+                android:text="@string/notifSetting" />
 
             <Switch
-                android:id="@+id/notifSwitch"
+                android:id="@+id/switch3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                />
+                android:text="Switch" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@id/textSettings2"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="@string/langSetting"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <Spinner
-                android:id="@+id/lang_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/lang_array" />
-
-        </TableRow>
+            android:layout_height="match_parent" />
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@id/textSettings3"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="@string/aboutSetting"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                />
-
-
-
-        </TableRow>
-
+            android:layout_height="match_parent" />
     </TableLayout>
 
 </android.support.constraint.ConstraintLayout>
