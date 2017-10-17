@@ -9,7 +9,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Lumi" />
-            <option value="$PROJECT_DIR$/Richard22" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
