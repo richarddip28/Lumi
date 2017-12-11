@@ -1,36 +1,66 @@
 <resources>
+
+    <!--Global-->
     <string name="app_name">Lumi</string>
 
 
     <!--Login Screen-->
-    <string name="User_Name_Entry">Nom d\'utilisateur</string>
-    <string name="Password_Entry">"Mot de passe "</string>
-    <string name="login">"S'identifier "</string>
+    <string name="User_Name_Entry">Pseudonyme</string>
+    <string name="Password_Entry">Mot de Passe</string>
+    <string name="login">Connection</string>
+    <string name="register_id">Inscription de Lumi ID</string>
+    <string name="name_hint">Entrer Lumi ID</string>
+    <string name="pass_hint">Entrer Mot de Passe</string>
 
     <string name="user_name">%1$s</string>
     <string name="password">%1$s</string>
-    <string name="langSetting">"La langue "</string>
-    <string name="aboutSetting">"au sujet de "</string>
+    <string name="langSetting">Langue</string>
+    <string name="aboutSetting">Sujet</string>
     <string name="notifSetting">Notifications</string>
 
     <string-array name="lang_array">
-        <item>English</item>
-        <item>French</item>
+        <item>Anglais</item>
+        <item>Français</item>
     </string-array>
 
-    <!--Baby Menu Screen-->
-    <string name="mybaby">"mon bébé "</string>
-    <string name="automode">"mode automatique "</string>
-    <string name="automode_description">l\'application de ce mode permet à lumi de détecter automatiquement lorsque la lumière est nécessaire</string>
+    <!--Register Screen-->
+    <string name="register_title">Inscription</string>
+    <string name="register_header">Inscrivez votre Lumi en utilisant le numéro de serie qui se trouve en dessus du produit</string>
+    <string name="lumi_serial">Numéro de Serie de Lumi</string>
+    <string name="lumi_password">Nouveau Mot de Passe</string>
+    <string name="lumi_password_confirm">Confirmer Mot de Passe</string>
+    <string name="confirm_reg">Confirmer</string>
 
-    <string name="cryingmode">Mode pleurs</string>
+    <string name="lumi_no_sn">Entrer Numéro de Serie de Lumir</string>
+    <string name="lumi_not_full">Entrer le Numéro de Serie complet</string>
+    <string name="pass_empty">Veuillez Entrer un Mot de Passe</string>
+    <string name="pass_not_match">Mots de passe Non-Identique</string>
+
+    <!--Main Menu Screen-->
+    <string-array name="user_list">
+        <item>Choisir Pseudonyme</item>
+    </string-array>
+
+    <string name="logged_toast">Connecté: \u0020</string>
+    <string name="need_user">Veuillez choisir votre pseudonyme pour continuer</string>
+
+    <string name="add_user">Ajouter Pseudonyme</string>
+    <string name="userfield_error">Veillez entrer un Pseudonyme</string>
+    <string name="userfield_short">Votre Pseudonyme doit avoir au moins 3 caractères</string>
+
+    <!--Baby Menu Screen-->
+    <string name="mybaby">myBaby</string>
+    <string name="automode">mode automatique</string>
+    <string name="automode_description">L\'application de ce mode permet à lumi de détecter automatiquement lorsque la lumière est nécessaire</string>
+
+    <string name="cryingmode">mode pleurs</string>
     <string name="cryingmode_description">L\'application de ce mode permet à lumi d\'alerter automatiquement l\'application, ainsi que d\'afficher une luminosité et un réglage de couleur personnalisés</string>
     <string name="adjustpref">ajuster la sensibilité</string>
 
-    <string name="name_error">Vous n\'avez pas saisi de nom</string>
-    <string name="password_error">Vous n\'avez pas saisi de mot de passe</string>
+    <string name="name_error">Veuillez entrer un nom</string>
+    <string name="password_error">Entrer votre mot de passe</string>
 
-    <string name="lullabies">berceuses</string>
+    <string name="lullabies">Berceuses</string>
 
     <string-array name="song_list">
         <item>Choose Song</item>
@@ -40,6 +70,21 @@
 
     <string name="rockabye_song">Rock a bye baby</string>
     <string name="twinkle_song">Twinkle Twinkle</string>
-    <string name="lightReader">Lecture légère</string>
+    <string name="lightReader">Light Reading</string>
+
+    <string name="trigger_light_low">Manque de lumiere detecté. Lumieres Lumi ON</string>
+    <string name="trigger_light_high">Abondance de lumiere detecté. Lumieres Lumi OFF</string>
+
+    <!--Message Board-->
+    <string name="sendButton">Envoyer</string>
+    <string name="type_message_hint">Entrer Message</string>
+    <string name="messageboard_header">Panneau d\'Affichage</string>
+    <string name="titleSetting">Paramètres</string>
+    <string name="startButton">Début</string>
+    <string name="timerDefault">00:00:00</string>
+    <string name="setButton">Set</string>
+    <string name="stop_timer">Arret</string>
+    <string name="reset_timer">Réinitialisation</string>
+    <string name="resumeButton">Reprendre</string>
 
 </resources>

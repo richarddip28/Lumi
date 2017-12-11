@@ -163,6 +163,7 @@
         android:onClick="clearCache"
         android:text="CLEAR CACHE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="16dp" />
 
 </android.support.constraint.ConstraintLayout>

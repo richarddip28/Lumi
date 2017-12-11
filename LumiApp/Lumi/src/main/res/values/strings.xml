@@ -18,6 +18,8 @@
     <string name="aboutSetting">About</string>
     <string name="notifSetting">Notifications</string>
 
+    <string name="remember_me">Remember Username</string>
+
     <string-array name="lang_array">
         <item>English</item>
         <item>French</item>
