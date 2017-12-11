@@ -3,9 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Lumi/Lumi.iml" filepath="$PROJECT_DIR$/Lumi/Lumi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lumi/Lumi.iml" filepath="$PROJECT_DIR$/Lumi/Lumi.iml" />
       <module fileurl="file://$PROJECT_DIR$/LumiApp.iml" filepath="$PROJECT_DIR$/LumiApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LumiApp.iml" filepath="$PROJECT_DIR$/LumiApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Richard221/Richard221.iml" filepath="$PROJECT_DIR$/Richard221/Richard221.iml" />
     </modules>
   </component>
 </project>

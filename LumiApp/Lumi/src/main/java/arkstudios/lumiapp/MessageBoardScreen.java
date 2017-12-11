@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -63,15 +64,17 @@ public class MessageBoardScreen extends AppCompatActivity {
 
         user = prefs.getString("logged_user", "no_id");
         chatList = new ArrayList<String>();
+
         if(prefs.getStringSet("messageLog", null) != null)
             chatList.addAll(prefs.getStringSet("messageLog", null));
+
 
 
     }
 
     public void addItems(){
 
-        chatList.add(user +" :  " + messagetoSend + " [" +currentTime+ "]");
+        chatList.add("[" +currentTime+ "] "+user + " :  " + messagetoSend);
         set.addAll(chatList);
         editor.putStringSet("messageLog", set);
         editor.commit();

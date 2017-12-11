@@ -1,13 +1,5 @@
 [
     {
-        "merged": "C:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\user\\.android\\build-cache\\acb6e3c4493d71f9ccd03264fe551a1a2a42fa05\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\user\\Documents\\Lumi\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\user\\.android\\build-cache\\acb6e3c4493d71f9ccd03264fe551a1a2a42fa05\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\Richard Dip\\Desktop\\Lumi\\LumiApp\\Lumi\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
         "source": "C:\\Users\\Richard Dip\\.android\\build-cache\\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },

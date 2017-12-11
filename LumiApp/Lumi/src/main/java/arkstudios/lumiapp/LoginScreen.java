@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +29,7 @@ public class LoginScreen extends AppCompatActivity {
     Vibrator v;
     VibrationEffect vibe;
     Typeface custom_font;
+    CheckBox remember_me;
 
     public void setFont(){
 
@@ -49,12 +52,15 @@ public class LoginScreen extends AppCompatActivity {
         title = (TextView) findViewById(R.id.textView);
         nextScreen = new Intent(this, MainMenuActivity.class);
         registerScreen = new Intent(this, RegisterScreen.class);
-
+        remember_me = (CheckBox) findViewById(R.id.checkBox);
 
         setFont();
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
+
+        if(prefs.getString("Username", null) != null)
+            editTextName.setText(prefs.getString("Username", null));
 
         v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
@@ -109,6 +115,13 @@ public class LoginScreen extends AppCompatActivity {
         setContentView(R.layout.activity_login_screen);
         init();
 
+        remember_me.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putString("Username", editTextName.getText().toString());
+                editor.commit();
+            }
+        });
 
     }
 }

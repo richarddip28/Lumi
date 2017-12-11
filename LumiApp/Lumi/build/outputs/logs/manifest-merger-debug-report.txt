@@ -1,123 +1,135 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:2:1-32:12
 	package
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:3:5-33
-		INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:3:5-33
+		INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
 uses-permission#android.permission.VIBRATE
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:5:5-66
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:5:5-66
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:5:22-63
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:5:22-63
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:6:5-71
+	android:name
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:6:22-68
 application
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:7:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\user\.android\build-cache\acb6e3c4493d71f9ccd03264fe551a1a2a42fa05\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\user\.android\build-cache\e6a1d8f01e7b4f8dd714f434955c830bb7410ccf\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\user\.android\build-cache\cab4d721e5aeebcf02609e65ae4da06074598fb3\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\user\.android\build-cache\f57e26f2017342a61b0ecbcadfed0b3dd80092b6\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\user\.android\build-cache\b90b20f449a51415f5c2097111061336393bc92e\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\user\.android\build-cache\0bf8d012b719f931dc15ea22c5344432b821ca2e\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\user\.android\build-cache\3bfc085938538bd92ab28ccfdb36baed4ee19e55\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\user\.android\build-cache\00841e7877cf13c73a83c82e61d961d2afa624cc\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\user\.android\build-cache\fc7101e940c6f8237281e1fa5e06d500f231b7a4\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\user\.android\build-cache\f2dfa89bff135f5f204b3b9f72ce91f311073e1d\output\AndroidManifest.xml:9:5-20
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:8:5-30:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Richard Dip\.android\build-cache\e8b565ab465594dfe00ac9031504da8f22d7050e\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\cf0ec42e395d6968ac57efa0d031b332c19f8336\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\0606fad743a6d32a843098923ba65615a8113907\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\10057bae897594eb0fcbc74ad6ac1ef769ee3f89\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\496600251830c15aff1a8b43a303a30c30ab2cfc\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\f4c78831459b241e133a00b3d1794042e5c08afd\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\bf586e8e84997c91c963b79ebd86f0d93fe77962\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\9206d369c4808845625c173b2fcba0a966142ff6\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\7defd25e57e738f89e801e971c3a49823064ba6f\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\1871f8e66188874a018ecf37c828ef483fd0ffd8\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\4fa3a887cf8e2e73edeba6b7f8db27f9abb0b175\output\AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:11:9-41
 	android:supportsRtl
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:13:9-35
 	android:roundIcon
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:11:9-52
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:12:9-52
 	android:allowBackup
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:9:9-35
 	android:icon
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:9:9-41
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:10:9-41
 	android:theme
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:13:9-40
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:14:9-40
 activity#arkstudios.lumiapp.LoginScreen
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:14:9-20:20
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:15:9-21:20
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:14:19-64
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:15:19-64
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:15:13-19:29
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:16:17-69
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:16:25-66
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:18:17-77
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:18:27-74
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:19:27-74
 activity#arkstudios.lumiapp.SettingsMenu
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:21:9-68
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:22:9-68
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:21:19-65
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:22:19-65
 activity#arkstudios.lumiapp.ColorMenu
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:22:9-65
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:23:9-65
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:22:19-62
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:23:19-62
 activity#arkstudios.lumiapp.BabyMenu
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:23:9-64
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:24:9-64
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:23:19-61
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:24:19-61
 activity#arkstudios.lumiapp.NotificationsMenu
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:24:9-73
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:25:9-73
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:24:19-70
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:25:19-70
 activity#arkstudios.lumiapp.TimerMenu
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:25:9-65
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:26:9-65
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:25:19-62
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:26:19-62
 activity#arkstudios.lumiapp.MainMenuActivity
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:26:9-72
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:27:9-72
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:26:19-69
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:27:19-69
 activity#arkstudios.lumiapp.RegisterScreen
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:27:9-70
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:28:9-70
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:27:19-67
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:28:19-67
 activity#arkstudios.lumiapp.MessageBoardScreen
-ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:28:9-83
+ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:29:9-83
 	android:name
-		ADDED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:28:19-71
+		ADDED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml:29:19-71
 uses-sdk
-INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\user\.android\build-cache\acb6e3c4493d71f9ccd03264fe551a1a2a42fa05\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\user\.android\build-cache\e6a1d8f01e7b4f8dd714f434955c830bb7410ccf\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\user\.android\build-cache\cab4d721e5aeebcf02609e65ae4da06074598fb3\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\user\.android\build-cache\f57e26f2017342a61b0ecbcadfed0b3dd80092b6\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\user\.android\build-cache\b90b20f449a51415f5c2097111061336393bc92e\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\user\.android\build-cache\0bf8d012b719f931dc15ea22c5344432b821ca2e\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\user\.android\build-cache\3bfc085938538bd92ab28ccfdb36baed4ee19e55\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\user\.android\build-cache\00841e7877cf13c73a83c82e61d961d2afa624cc\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\user\.android\build-cache\fc7101e940c6f8237281e1fa5e06d500f231b7a4\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\user\.android\build-cache\f2dfa89bff135f5f204b3b9f72ce91f311073e1d\output\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Richard Dip\.android\build-cache\e8b565ab465594dfe00ac9031504da8f22d7050e\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\cf0ec42e395d6968ac57efa0d031b332c19f8336\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\0606fad743a6d32a843098923ba65615a8113907\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\10057bae897594eb0fcbc74ad6ac1ef769ee3f89\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\27a421b755f909e41685c52cfd36aba92135f741\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\496600251830c15aff1a8b43a303a30c30ab2cfc\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\f4c78831459b241e133a00b3d1794042e5c08afd\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\bf586e8e84997c91c963b79ebd86f0d93fe77962\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\9206d369c4808845625c173b2fcba0a966142ff6\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\7defd25e57e738f89e801e971c3a49823064ba6f\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\1871f8e66188874a018ecf37c828ef483fd0ffd8\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\4fa3a887cf8e2e73edeba6b7f8db27f9abb0b175\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\user\.android\build-cache\acb6e3c4493d71f9ccd03264fe551a1a2a42fa05\output\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\cf0ec42e395d6968ac57efa0d031b332c19f8336\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\user\Documents\Lumi\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Richard Dip\Desktop\Lumi\LumiApp\Lumi\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\user\.android\build-cache\acb6e3c4493d71f9ccd03264fe551a1a2a42fa05\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\user\.android\build-cache\e6a1d8f01e7b4f8dd714f434955c830bb7410ccf\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\user\.android\build-cache\cab4d721e5aeebcf02609e65ae4da06074598fb3\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\user\.android\build-cache\f57e26f2017342a61b0ecbcadfed0b3dd80092b6\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\user\.android\build-cache\b90b20f449a51415f5c2097111061336393bc92e\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\user\.android\build-cache\0bf8d012b719f931dc15ea22c5344432b821ca2e\output\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\user\.android\build-cache\3bfc085938538bd92ab28ccfdb36baed4ee19e55\output\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\user\.android\build-cache\00841e7877cf13c73a83c82e61d961d2afa624cc\output\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\user\.android\build-cache\fc7101e940c6f8237281e1fa5e06d500f231b7a4\output\AndroidManifest.xml:25:5-27:41
+ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\cf0ec42e395d6968ac57efa0d031b332c19f8336\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\bccd7f8ac5c1c3365517fcd526534a84dad2c1d2\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\0606fad743a6d32a843098923ba65615a8113907\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\10057bae897594eb0fcbc74ad6ac1ef769ee3f89\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\27a421b755f909e41685c52cfd36aba92135f741\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\496600251830c15aff1a8b43a303a30c30ab2cfc\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\f4c78831459b241e133a00b3d1794042e5c08afd\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\bf586e8e84997c91c963b79ebd86f0d93fe77962\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\9206d369c4808845625c173b2fcba0a966142ff6\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\7defd25e57e738f89e801e971c3a49823064ba6f\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\1871f8e66188874a018ecf37c828ef483fd0ffd8\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\4fa3a887cf8e2e73edeba6b7f8db27f9abb0b175\output\AndroidManifest.xml:25:5-27:41
 	android:value
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\user\.android\build-cache\acb6e3c4493d71f9ccd03264fe551a1a2a42fa05\output\AndroidManifest.xml:27:9-38
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\cf0ec42e395d6968ac57efa0d031b332c19f8336\output\AndroidManifest.xml:27:9-38
 	android:name
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\user\.android\build-cache\acb6e3c4493d71f9ccd03264fe551a1a2a42fa05\output\AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Richard Dip\.android\build-cache\cf0ec42e395d6968ac57efa0d031b332c19f8336\output\AndroidManifest.xml:26:9-47
