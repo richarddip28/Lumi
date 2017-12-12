@@ -159,27 +159,6 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:id="@id/langSettings"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="@string/langSetting"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <Spinner
-                android:id="@+id/lang_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/lang_array" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
                 android:id="@id/aboutSettings"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"

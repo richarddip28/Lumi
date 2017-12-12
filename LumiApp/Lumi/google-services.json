@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "306685748412",
+    "firebase_url": "https://software-project-1512689251496.firebaseio.com",
+    "project_id": "software-project-1512689251496",
+    "storage_bucket": "software-project-1512689251496.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306685748412:android:72f118ca18b81a3d",
+        "android_client_info": {
+          "package_name": "arkstudios.lumiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306685748412-prakqa4gnj3lb4s1g01dt4gm9m2u3tj9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "arkstudios.lumiapp",
+            "certificate_hash": "94b6532c065593fa8a7db574d11f50ff09ce7ec3"
+          }
+        },
+        {
+          "client_id": "306685748412-6lajmv47on395javldb6toibv2t1bpah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCHwuMyEEi2G4O4rsHgBQ5ejXqWXbnUMI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306685748412-6lajmv47on395javldb6toibv2t1bpah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

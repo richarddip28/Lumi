@@ -96,100 +96,76 @@
         app:srcCompat="@drawable/timer1"
         android:layout_marginEnd="8dp" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="27dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/timer1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintLeft_creator="1" />
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp">
 
-    <Button
-        android:id="@+id/setButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/setButton"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="63dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/listView" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/timer1" />
 
-    <TextView
-        android:id="@+id/timerTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/timerDefault"
-        android:textColor="@color/white"
-        android:textSize="36sp"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/setButton"
-        android:layout_marginStart="34dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/setButton" />
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="0dp"
-        android:layout_height="380dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:scrollbars="horizontal"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setButton"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView2"
+            android:layout_centerHorizontal="true"
+            android:text="@string/timerDefault"
+            android:textColor="@color/white"
+            android:textSize="36sp" />
 
+        <Button
+            android:id="@+id/setButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timerTextView"
+            android:layout_centerHorizontal="true"
+            android:text="@string/setButton" />
+
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timerTextView"
+            android:layout_toEndOf="@id/setButton"
+            android:text="@string/startButton" />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_below="@id/setButton"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:scrollbars="horizontal" />
+
+    </RelativeLayout>
 
     <EditText
         android:id="@+id/editCustomTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Minutes"
         android:ems="10"
+        android:hint="Minutes"
         android:inputType="time"
         android:textColor="@color/white"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="17dp"
-        app:layout_constraintRight_toRightOf="@+id/imageButton6"
-        android:layout_marginBottom="16dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton5" />
 
     <Button
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
         android:text="Add"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/startButton"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintRight_toRightOf="@+id/editCustomTime"
-        app:layout_constraintTop_toBottomOf="@+id/timerTextView"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton7" />
-
+        app:layout_constraintBaseline_toBaselineOf="@+id/editCustomTime"
+        app:layout_constraintEnd_toStartOf="@+id/editCustomTime" />
 
 </android.support.constraint.ConstraintLayout>

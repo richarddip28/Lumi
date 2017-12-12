@@ -85,9 +85,13 @@ public class MainMenuActivity extends AppCompatActivity {
             list.clear();
             list.addAll(prefs.getStringSet("userList", null));
         }
+
+
+
         adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, list);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         userList.setAdapter(adapter);
+        userList.setSelection(prefs.getInt("start_pos", 0));
 
 
 
@@ -216,18 +220,24 @@ public class MainMenuActivity extends AppCompatActivity {
                             editor.commit();
                             Toast.makeText(getBaseContext(), getResources().getString(R.string.logged_toast)+userList.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                             nextscreenOk=true;
+                            editor.putInt("start_pos", i);
+                            editor.commit();
                             break;
                         case 2:
                             editor.putString("logged_user", userList.getSelectedItem().toString());
                             editor.commit();
                             Toast.makeText(getBaseContext(), getResources().getString(R.string.logged_toast)+userList.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                             nextscreenOk=true;
+                            editor.putInt("start_pos", i);
+                            editor.commit();
                             break;
                         case 3:
                             editor.putString("logged_user", userList.getSelectedItem().toString());
                             editor.commit();
                             Toast.makeText(getBaseContext(), getResources().getString(R.string.logged_toast)+userList.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                             nextscreenOk=true;
+                            editor.putInt("start_pos", i);
+                            editor.commit();
                             break;
                         default:
                             nextscreenOk=false;
