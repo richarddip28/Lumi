@@ -146,11 +146,11 @@ public class SettingsMenu extends AppCompatActivity {
                 }
             }
         });
-
-        Spinner language = (Spinner) findViewById(R.id.lang_spinner);
+        //Don't need a language setting, commented out for now.
+        /*Spinner language = (Spinner) findViewById(R.id.lang_spinner);
 
         adapter = ArrayAdapter.createFromResource(this, R.array.lang_array, R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        language.setAdapter(adapter);
+        language.setAdapter(adapter);*/
     }
 }

@@ -1,7 +1,10 @@
 package arkstudios.lumiapp;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +15,14 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -36,6 +47,12 @@ public class MessageBoardScreen extends AppCompatActivity {
     SharedPreferences.Editor editor;
     Set<String> set;
 
+    FirebaseAuth auth;
+    FirebaseUser fUser;
+    DatabaseReference getchatlist;
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+
 
     public void setFont(){
 
@@ -47,6 +64,16 @@ public class MessageBoardScreen extends AppCompatActivity {
 
     }
 
+    public static boolean isConnected(Context context) {
+
+        ConnectivityManager cm =
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+
+        return activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+    }
 
     public void init(){
 
@@ -62,12 +89,50 @@ public class MessageBoardScreen extends AppCompatActivity {
         set = new HashSet<String>();
         setFont();
 
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getInstance().getReference();
+
+        try {
+            auth = FirebaseAuth.getInstance();
+            getchatlist = FirebaseDatabase.getInstance().getReference().
+                    child(prefs.getString("lumi_id", null)).child("chatlist");
+
+            fUser = auth.getCurrentUser();
+
+            Toast.makeText(this, "WORKING", Toast.LENGTH_SHORT).show();
+        }catch(Exception e) {
+        }
+
         user = prefs.getString("logged_user", "no_id");
         chatList = new ArrayList<String>();
 
-        if(prefs.getStringSet("messageLog", null) != null)
-            chatList.addAll(prefs.getStringSet("messageLog", null));
+        if(!isConnected(this)) {
+            if (prefs.getStringSet("messageLog", null) != null)
+                chatList.addAll(prefs.getStringSet("messageLog", null));
+        }
+        else{
 
+                getchatlist.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                             chatList.add(snapshot.getValue().toString());
+                        }
+                        getchatlist.removeEventListener(this);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+
+
+
+
+        }
 
 
     }
@@ -78,7 +143,10 @@ public class MessageBoardScreen extends AppCompatActivity {
         set.addAll(chatList);
         editor.putStringSet("messageLog", set);
         editor.commit();
-        adapter.notifyDataSetChanged();
+
+//        adapter.notifyDataSetChanged();
+        getchatlist.setValue(chatList);
+
 
     }
     public void sendMessage(View view){

@@ -12,12 +12,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class TimerMenu extends AppCompatActivity implements OnClickListener {
@@ -40,6 +43,11 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
     Button startButton;
     Button addButton;
     CountDownTimer countDownTimer;
+
+    ListView list;
+    ArrayList arrayList;
+
+    ArrayAdapter adapter;
 
 
     public void init(){
@@ -133,21 +141,30 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
 
         setListeners();
 
+        list = (ListView) findViewById(R.id.listView);
+        arrayList = new ArrayList<String>();
+
+        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
+
+        list.setAdapter(adapter);
+
         addButton = (Button) findViewById(R.id.addButton);
 
-        /*addButton.setOnClickListener(new OnClickListener() {
+        addButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TimerMenu.this);
-                alertDialogBuilder.setTitle("Add User");
-                final EditText newCustomTimer = new EditText(this);
+                alertDialogBuilder.setTitle("Add New Timer");
+                final EditText newCustomTimer = new EditText(TimerMenu.this);
                 newCustomTimer.setBackgroundResource(R.drawable.edittext_style);
                 alertDialogBuilder
                         .setView(newCustomTimer)
                         .setCancelable(false)
                         .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+
+                                arrayList.add(newCustomTimer.getText().toString());
                                 dialog.cancel();
                             }
                         })
@@ -160,7 +177,7 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();
             }
-        });*/
+        });
 
     }
 

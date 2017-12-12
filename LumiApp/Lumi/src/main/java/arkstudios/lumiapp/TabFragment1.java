@@ -43,6 +43,7 @@ import android.widget.ToggleButton;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -54,7 +55,6 @@ public class TabFragment1 extends Fragment {
 
     ProgressBar level;
     Handler handler;
-    int lastLevel = 0;
     Switch s, record;
     SeekBar seekBar;
     VibrationEffect vibe;
@@ -141,7 +141,8 @@ public class TabFragment1 extends Fragment {
         low_light_triggered_log = new ArrayList<String>();
 
         if(prefs.getStringSet("messageLog", null) != null)
-            low_light_triggered_log.addAll(prefs.getStringSet("messageLog", null));
+            set.addAll(prefs.getStringSet("messageLog", null));
+
 
 
 
