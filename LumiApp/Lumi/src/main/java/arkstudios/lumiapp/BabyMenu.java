@@ -1,3 +1,6 @@
+//TEAM NAME:    ARK STUDIOS
+//PROJECT:      LUMI
+
 package arkstudios.lumiapp;
 
 import android.support.v4.app.Fragment;
