@@ -1,3 +1,6 @@
+//TEAM NAME:    ARK STUDIOS
+//PROJECT:      LUMI
+
 package arkstudios.lumiapp;
 
 import android.content.Context;
@@ -30,9 +33,6 @@ public class RegisterScreen extends AppCompatActivity {
     Intent nextScreen;
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
-    Context ctx = this;
-    DatabaseOperations DB;
-    String serial_no, serial_pass, con_pass;
     DatabaseReference databaseReference;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -73,14 +73,13 @@ public class RegisterScreen extends AppCompatActivity {
         nextScreen = new Intent(this, MainMenuActivity.class);
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
-        DB = new DatabaseOperations(ctx);
+        setFont();
 
         try {
             auth = FirebaseAuth.getInstance();
             databaseReference = FirebaseDatabase.getInstance().getReference();
             user = auth.getCurrentUser();
 
-            Toast.makeText(this, "WORKING", Toast.LENGTH_SHORT).show();
         }catch(Exception e) {
         }
 
@@ -113,7 +112,7 @@ public class RegisterScreen extends AppCompatActivity {
             }
 
             if(!serialnumberOK)
-                Toast.makeText(this, "Inalid Lumi Serial", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.invalid_lumi), Toast.LENGTH_SHORT).show();
 
 
             if (SERIAL_PASS.getText().toString().matches(CON_PASS.getText().toString())){
@@ -155,8 +154,6 @@ public class RegisterScreen extends AppCompatActivity {
         UserInformation userInformation = new UserInformation(sPass);
         user = auth.getCurrentUser();
         databaseReference.child(serial).setValue(userInformation);
-
-        Toast.makeText(this, "information successed", Toast.LENGTH_LONG).show();
 
     }
 

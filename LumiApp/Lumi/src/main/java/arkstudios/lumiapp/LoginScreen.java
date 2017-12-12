@@ -1,17 +1,17 @@
+//TEAM NAME:    ARK STUDIOS
+//PROJECT:      LUMI
+
 package arkstudios.lumiapp;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -20,23 +20,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.*;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class LoginScreen extends AppCompatActivity {
 
@@ -51,12 +41,10 @@ public class LoginScreen extends AppCompatActivity {
     VibrationEffect vibe;
     Typeface custom_font;
     CheckBox remember_me;
-    String serialname, password, userID;
+    String  password;
 
     FirebaseAuth auth;
     FirebaseUser user;
-    FirebaseAuth.AuthStateListener mAuthListener;
-    UserInformation userinfo;
     DatabaseReference getpass;
 
     FirebaseDatabase database;
@@ -93,6 +81,7 @@ public class LoginScreen extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         myRef = database.getInstance().getReference();
         user = auth.getCurrentUser();
+        setFont();
 
 
 
@@ -138,7 +127,7 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
         }catch(Exception e){
-            Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.creds), Toast.LENGTH_LONG).show();
         }
 
 
@@ -159,7 +148,7 @@ public class LoginScreen extends AppCompatActivity {
             if(password.equals(editPassword.getText().toString()))
                 verifiedOK = true;
             else {
-                Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.creds), Toast.LENGTH_SHORT).show();
                 verifiedOK = false;
             }
         }catch(Exception e){
