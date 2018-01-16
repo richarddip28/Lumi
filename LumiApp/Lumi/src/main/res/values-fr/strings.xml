@@ -79,38 +79,12 @@
     <string name="sendButton">Envoyer</string>
     <string name="type_message_hint">Entrer Message</string>
     <string name="messageboard_header">Panneau d\'Affichage</string>
-
-    <!--Settings-->
     <string name="titleSetting">Paramètres</string>
-
-    <!--TimerMenu-->
     <string name="startButton">Début</string>
     <string name="timerDefault">00:00:00</string>
     <string name="setButton">Set</string>
     <string name="stop_timer">Arret</string>
     <string name="reset_timer">Réinitialisation</string>
     <string name="resumeButton">Reprendre</string>
-
-    <string name="set_the_timer">Incérer un nombre</string>
-    <string name="set">Ajuster</string>
-    <string name="minutes">Minutes</string>
-    <string name="add">Ajouter</string>
-    <string name="timerOver">L\'heure est venue!</string>
-    <string name="cancel">Annuler</string>
-    <string name="timerDone">L\'heure est venue!</string>
-    <string name="timerDoneTitle">Reveille-toi!</string>
-    <string name="addpresetTimer">Ajouter Favori</string>
-    <string name="setTimerTitle">Incérer un nombre</string>
-    <string name="notifOn">Les notifications sont activées</string>
-    <string name="notifOff">Les notifications sont annulées</string>
-
-    <string-array name="timerPresets">
-        <item>.5</item>
-        <item>1</item>
-        <item>5</item>
-        <item>10</item>
-        <item>15</item>
-        <item>30</item>
-    </string-array>
 
 </resources>
