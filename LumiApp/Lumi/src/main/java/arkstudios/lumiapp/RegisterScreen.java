@@ -16,14 +16,24 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.Query;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.List;
 
 public class RegisterScreen extends AppCompatActivity {
 
@@ -37,6 +47,7 @@ public class RegisterScreen extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseAuth auth;
     FirebaseUser user;
+
     String[] serial_list = {    "489611038",
                                 "062576422",
                                 "759070491",
@@ -86,7 +97,7 @@ public class RegisterScreen extends AppCompatActivity {
         }
 
 
-    }
+    }//end init
 
     public void tryRegister(View view){
 
@@ -133,7 +144,7 @@ public class RegisterScreen extends AppCompatActivity {
         }catch(Exception e){
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
-        if(serialOk && passOk && serialnumberOK){
+        if(testing(serialOk,passOk,serialnumberOK)){
 
             try {
                 registerUser();
@@ -145,6 +156,13 @@ public class RegisterScreen extends AppCompatActivity {
             }
         }
 
+    }
+
+    public boolean testing(boolean serial, boolean pass, boolean serialnum){
+        if(serial && pass && serialnum)
+            return true;
+        else
+            return false;
     }
 
     public void registerUser(){

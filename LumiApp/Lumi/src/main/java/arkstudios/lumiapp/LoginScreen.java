@@ -155,12 +155,20 @@ public class LoginScreen extends AppCompatActivity {
         }
 
 
-        if(nameOk && passwordOk && verifiedOK) {
+        if(testing(nameOk,passwordOk,verifiedOK)) {
             editor.putString("lumi_id", editTextName.getText().toString());
             editor.commit();
             startActivity(nextScreen);
         }
     }//end nextActivity()
+
+    public boolean testing(boolean name, boolean pass, boolean verified){
+        if(name && pass && verified)
+            return true;
+        else
+            return false;
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
