@@ -83,12 +83,37 @@
     <string name="sendButton">Send</string>
     <string name="type_message_hint">Type Message</string>
     <string name="messageboard_header">Message Board</string>
+
+    <!--Settings-->
     <string name="titleSetting">Settings</string>
+
+    <!--Timer Menu-->
     <string name="startButton">Start</string>
-    <string name="timerDefault">00:00:00</string>
+    <string name="timerDefault">00:00</string>
     <string name="setButton">Set</string>
     <string name="stop_timer">Stop</string>
     <string name="reset_timer">Reset</string>
     <string name="resumeButton">Resume</string>
+    <string name="set_the_timer">Set the Timer</string>
+    <string name="set">Set</string>
+    <string name="minutes">Minutes</string>
+    <string name="add">Add</string>
+    <string name="timerOver">Timer\'s done!</string>
+    <string name="cancel">Cancel</string>
+    <string name="timerDone">Timer is done!</string>
+    <string name="timerDoneTitle">Hey! Wake up!</string>
+    <string name="addpresetTimer">Add New Preset</string>
+    <string name="setTimerTitle">Set Timer</string>
+    <string name="notifOn">Notifications are now on!</string>
+    <string name="notifOff">Notifications are off!</string>
+
+    <string-array name="timerPresets">
+        <item>.5</item>
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>30</item>
+    </string-array>
 
 </resources>

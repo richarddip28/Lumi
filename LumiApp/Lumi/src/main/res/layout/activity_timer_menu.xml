@@ -18,8 +18,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/circle_blue"
-        android:layout_marginEnd="16dp" />
+        app:srcCompat="@drawable/circle_blue" />
 
     <ImageButton
         android:id="@+id/imageButton6"
@@ -33,8 +32,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageButton5"
         app:layout_constraintRight_toLeftOf="@+id/imageButton9"
-        app:srcCompat="@drawable/color_palette"
-        android:layout_marginEnd="8dp" />
+        app:srcCompat="@drawable/color_palette" />
 
     <ImageButton
         android:id="@+id/imageButton7"
@@ -48,23 +46,22 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageButton5"
         app:layout_constraintRight_toLeftOf="@+id/imageButton3"
-        app:srcCompat="@drawable/setting"
-        android:layout_marginEnd="8dp" />
+        app:srcCompat="@drawable/setting" />
 
     <ImageButton
         android:id="@+id/imageButton8"
-        android:layout_width="25dp"
+        android:layout_width="0dp"
         android:layout_height="25dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@null"
         android:onClick="babyButtonClicked"
         android:scaleType="centerCrop"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageButton5"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/baby"
-        android:layout_marginEnd="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:srcCompat="@drawable/baby" />
 
     <ImageButton
         android:id="@+id/imageButton9"
@@ -78,8 +75,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageButton5"
         app:layout_constraintRight_toLeftOf="@+id/imageButton8"
-        app:srcCompat="@drawable/messageboard"
-        android:layout_marginEnd="8dp" />
+        app:srcCompat="@drawable/messageboard" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -88,19 +84,22 @@
         android:layout_marginBottom="8dp"
         android:layout_marginRight="8dp"
         android:background="@null"
-        android:scaleType="centerCrop"
         android:onClick="timerButtonClicked"
+        android:scaleType="centerCrop"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageButton5"
         app:layout_constraintRight_toLeftOf="@+id/imageButton6"
-        app:srcCompat="@drawable/timer1"
-        android:layout_marginEnd="8dp" />
+        app:srcCompat="@drawable/timer1" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="4dp">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -138,7 +137,7 @@
             android:text="@string/startButton" />
 
         <ListView
-            android:id="@+id/listView"
+            android:id="@+id/listViewTimer"
             android:layout_width="match_parent"
             android:layout_height="260dp"
             android:layout_below="@id/setButton"
@@ -148,24 +147,15 @@
 
     </RelativeLayout>
 
-    <EditText
-        android:id="@+id/editCustomTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Minutes"
-        android:inputType="time"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton5" />
-
     <Button
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:text="Add"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editCustomTime"
-        app:layout_constraintEnd_toStartOf="@+id/editCustomTime" />
+        android:layout_marginBottom="61dp"
+        android:layout_marginEnd="263dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton8"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

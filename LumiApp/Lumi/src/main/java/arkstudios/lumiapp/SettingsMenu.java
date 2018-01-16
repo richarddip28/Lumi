@@ -36,6 +36,8 @@ public class SettingsMenu extends AppCompatActivity {
 
     protected Vibrator vibrate;
 
+    NotificationManager mNotificationManager;
+
 
     public void init(){
 
@@ -127,8 +129,8 @@ public class SettingsMenu extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
                 Context context = getApplicationContext();
-                CharSequence notifTest = "Notifications are now on!";
-                CharSequence notifTesttwo = "Notifications are off!";
+                CharSequence notifTest = getString(R.string.notifOn);
+                CharSequence notifTesttwo = getString(R.string.notifOff);
                 int duration = Toast.LENGTH_SHORT;
 
                 if (isChecked) {
