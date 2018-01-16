@@ -7,14 +7,20 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,9 +30,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-public class TimerMenu extends AppCompatActivity implements OnClickListener {
+public class TimerMenu extends AppCompatActivity{
 
     public ImageButton menu;
     public ImageButton settings;
@@ -37,6 +46,12 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
     Intent nextScreen;
     Animation fadeIn;
     Animation fadeOut;
+    VibrationEffect vibe;
+    Vibrator vb;
+
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+    Set<String> set;
 
     Context context;
 
@@ -45,15 +60,32 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
     Button setButton;
     Button startButton;
     Button addButton;
-    CountDownTimer countDownTimer;
 
-    ListView list;
+    EditText newTimer;
+
+    ListView listPreset;
     ArrayList arrayList;
+    ArrayAdapter<String> listAdapter;
+    String convertString;
 
-    ArrayAdapter adapter;
+    Handler timeHandler;
+    Runnable timeRunnable;
+    long timeRemaining = 0;
+
+    String stringTest;
+    String getMinutes;
+    String hms;
+
+    private void vibratePhone() {
+        if (Build.VERSION.SDK_INT >= 26) {
+            ((Vibrator) getSystemService(VIBRATOR_SERVICE)).vibrate(VibrationEffect.createOneShot(150, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            ((Vibrator) getSystemService(VIBRATOR_SERVICE)).vibrate(150);
+        }
+    }
 
 
-    public void init(){
+    public void init() {
 
         menu = (ImageButton) findViewById(R.id.imageButton5);
         settings = (ImageButton) findViewById(R.id.imageButton7);
@@ -66,15 +98,17 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
         fadeOut = AnimationUtils.loadAnimation(this,
                 android.R.anim.fade_out);
 
-        timerTextView =(TextView)findViewById(R.id.timerTextView);
-        setButton = (Button)findViewById(R.id.setButton);
-        startButton = (Button)findViewById(R.id.startButton);
-        addButton = (Button)findViewById(R.id.addButton);
+        timerTextView = (TextView) findViewById(R.id.timerTextView);
+        setButton = (Button) findViewById(R.id.setButton);
+        startButton = (Button) findViewById(R.id.startButton);
+        addButton = (Button) findViewById(R.id.addButton);
+
+        listPreset = (ListView) findViewById(R.id.listViewTimer);
 
 
     }
 
-    public void menuButtonClicked(View view){
+    public void menuButtonClicked(View view) {
 
         if (settings.getVisibility() == View.INVISIBLE) {
 
@@ -106,28 +140,30 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
 
     }
 
-    public void settingsButtonClicked(View view){
+    public void settingsButtonClicked(View view) {
         nextScreen = new Intent(this, SettingsMenu.class);
         startActivity(nextScreen);
     }
-    public void colorButtonClicked(View view){
+
+    public void colorButtonClicked(View view) {
         nextScreen = new Intent(this, ColorMenu.class);
         startActivity(nextScreen);
     }
-    public void babyButtonClicked(View view){
+
+    public void babyButtonClicked(View view) {
         nextScreen = new Intent(this, BabyMenu.class);
         startActivity(nextScreen);
     }
-    public void notificationsButtonClicked(View view){
+
+    public void notificationsButtonClicked(View view) {
         nextScreen = new Intent(this, MessageBoardScreen.class);
         startActivity(nextScreen);
     }
 
-    public void timerButtonClicked(View view){
+    public void timerButtonClicked(View view) {
         Toast.makeText(this, "You are already here!",
                 Toast.LENGTH_LONG).show();
     }
-
 
 
     @Override
@@ -136,14 +172,174 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
         setContentView(R.layout.activity_timer_menu);
         init();
 
-
         timerTextView = (TextView) findViewById(R.id.timerTextView);
-        minutes = (EditText) findViewById(R.id.editCustomTime);
+        //minutes = (EditText) findViewById(R.id.editCustomTime);
         startButton = (Button) findViewById(R.id.startButton);
         setButton = (Button) findViewById(R.id.setButton);
+        editor = prefs.edit();
+        set = new HashSet<String>();
 
-        setListeners();
+        vb = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
+        if(prefs.getStringSet("timerMenu", null) != null)
+            set.addAll(prefs.getStringSet("timerMenu", null));
+
+        /*timerPreset = getResources().getStringArray(R.array.timerPresets);
+        ArrayList<String> listPresets = new ArrayList<String>();
+
+        listPresets.addAll(Arrays.asList(timerPreset));
+
+        listAdapter = new ArrayAdapter<String>(this, R.layout.custom_list, listPresets);
+        listPreset.setAdapter(listAdapter);*/
+
+        timeHandler = new Handler();
+        timeRunnable = new Runnable() {
+            @Override
+            public void run() {
+                timeRemaining -= 1000;
+                int seconds = (int) (timeRemaining / 1000);
+                int minutes = seconds / 60;
+                seconds = seconds % 60;
+
+                timerTextView.setText(String.format("%02d:%02d", minutes, seconds));
+
+                if (timeRemaining > 0) {
+                    timeHandler.postDelayed(this, 1000);
+                }
+
+                if (timeRemaining == 0) {
+                    timeHandler.removeCallbacks(timeRunnable);
+                    timerDone();
+                }
+
+                startButton.setText(getString(R.string.startButton));//Change button text
+            }
+        };
+
+        setButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TimerMenu.this);
+                alertDialogBuilder.setTitle(getString(R.string.setTimerTitle));
+                newTimer = new EditText(TimerMenu.this);
+                newTimer.setBackgroundResource(R.drawable.edittext_style);
+                alertDialogBuilder
+                        .setView(newTimer)
+                        .setCancelable(false)
+                        .setPositiveButton("Set", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                getMinutes = newTimer.getText().toString();
+                                stringTest = getMinutes;
+                                if (!getMinutes.equals("") && getMinutes.length() > 0) {
+                                    timeRemaining = Integer.parseInt(getMinutes) * 60 * 1000;
+                                    hms = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(timeRemaining) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(timeRemaining)), TimeUnit.MILLISECONDS.toSeconds(timeRemaining) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(timeRemaining)));
+                                    timerTextView.setText(hms);
+                                }
+                                dialog.cancel();
+                            }
+                        })
+
+                        .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });
+
+        listPreset = (ListView) findViewById(R.id.listViewTimer);
+        arrayList = new ArrayList<String>();
+        listAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
+        listPreset.setAdapter(listAdapter);
+
+        addButton = (Button) findViewById(R.id.addButton);
+
+        addButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TimerMenu.this);
+                alertDialogBuilder.setTitle(R.string.addpresetTimer);
+                final EditText newCustomTimer = new EditText(TimerMenu.this);
+                newCustomTimer.setBackgroundResource(R.drawable.edittext_style);
+                alertDialogBuilder
+                        .setView(newCustomTimer)
+                        .setCancelable(false)
+                        .setPositiveButton(getString(R.string.add), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                convertString = newCustomTimer.getText().toString();
+                                if (!convertString.contains("Minutes")) {
+                                    convertString = convertString + " Minutes";
+                                }
+
+                                arrayList.add(convertString);
+                                dialog.cancel();
+                            }
+                        })
+
+                        .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });
+
+        /*
+        listPreset.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedItem = (String) listPreset.getItemAtPosition(i);
+                if(selectedItem.contains("Minutes")){
+                    //selectedItem = selectedItem - " Minutes";
+                    Integer minutes = Integer.valueOf(selectedItem);
+                    timeRemaining = Integer.parseInt(selectedItem) * 60 * 1000;
+                    hms = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(timeRemaining) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(timeRemaining)), TimeUnit.MILLISECONDS.toSeconds(timeRemaining) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(timeRemaining)));
+                    timerTextView.setText(hms);
+                }
+
+            }
+        });
+        */
+
+
+    }
+
+    private void timerDone() {
+        AlertDialog alertDialog = new AlertDialog.Builder(TimerMenu.this).create();
+        alertDialog.setTitle(getString(R.string.timerDoneTitle));
+        alertDialog.setMessage(getString(R.string.timerDone));
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
+        vibratePhone();
+        timeHandler.removeCallbacks(timeRunnable);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+        /*
         list = (ListView) findViewById(R.id.listView);
         arrayList = new ArrayList<String>();
 
@@ -185,6 +381,7 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
     }
 
 
+
     //Set Listeners over button
     private void setListeners() {
         startButton.setOnClickListener(this);
@@ -223,7 +420,7 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
                     long millis = millisUntilFinished;
                     String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
                     timerTextView.setText(hms);
-                }*/
+                }
                 stopCountdown();//stop count down
                 startButton.setText(getString(R.string.startButton));//Change text to Start Timer7
                 setButton.setText(getString(R.string.setButton));
@@ -278,10 +475,11 @@ public class TimerMenu extends AppCompatActivity implements OnClickListener {
 
 
                 // show it
-                alertDialog.show();*/
+                alertDialog.show();
             }
         }.start();
 
     }
+    */
 
-}
+
