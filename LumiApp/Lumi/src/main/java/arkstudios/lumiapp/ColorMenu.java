@@ -14,6 +14,10 @@ import android.widget.Toast;
 
 public class ColorMenu extends AppCompatActivity {
 
+    //github test to prove github merge works
+    //hi kevin
+    //8:48pm jan 15 2018
+
     public ImageButton menu;
     public ImageButton settings;
     public ImageButton color;
