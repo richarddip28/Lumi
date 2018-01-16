@@ -6,8 +6,10 @@ package arkstudios.lumiapp;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +39,9 @@ public class SettingsMenu extends AppCompatActivity {
     protected Vibrator vibrate;
 
     NotificationManager mNotificationManager;
+
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
 
 
     public void init(){
@@ -117,6 +122,12 @@ public class SettingsMenu extends AppCompatActivity {
         setContentView(R.layout.activity_settings_menu);
         init();
 
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = prefs.edit();
+
+        prefs.getBoolean("notifSetting", false);
+
+
         vibrate = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         if (vibrate == null) {
             Context context = getApplicationContext();
@@ -133,9 +144,13 @@ public class SettingsMenu extends AppCompatActivity {
                 CharSequence notifTesttwo = getString(R.string.notifOff);
                 int duration = Toast.LENGTH_SHORT;
 
+
+
                 if (isChecked) {
                     NotificationManager mNotificationManager =
                             (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+                    editor.putBoolean("notifSetting", true);
 
                     vibrate.vibrate(200);
 
@@ -144,11 +159,15 @@ public class SettingsMenu extends AppCompatActivity {
                 }
                 else {
 
+                    editor.putBoolean("notifSetting", false);
+
+
                     vibrate.vibrate(200);
 
                     Toast toast = Toast.makeText(context, notifTesttwo, duration);
                     toast.show();
                 }
+                editor.commit();
             }
         });
         //Don't need a language setting, commented out for now.

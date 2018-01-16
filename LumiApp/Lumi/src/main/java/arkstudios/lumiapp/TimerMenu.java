@@ -13,6 +13,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -176,15 +177,21 @@ public class TimerMenu extends AppCompatActivity{
         //minutes = (EditText) findViewById(R.id.editCustomTime);
         startButton = (Button) findViewById(R.id.startButton);
         setButton = (Button) findViewById(R.id.setButton);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
         set = new HashSet<String>();
 
         vb = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
+        /*
         if(prefs.getStringSet("timerMenu", null) != null)
             set.addAll(prefs.getStringSet("timerMenu", null));
 
-        /*timerPreset = getResources().getStringArray(R.array.timerPresets);
+        editor.putString("timerMenu", null);
+        editor.apply();
+
+
+        timerPreset = getResources().getStringArray(R.array.timerPresets);
         ArrayList<String> listPresets = new ArrayList<String>();
 
         listPresets.addAll(Arrays.asList(timerPreset));
