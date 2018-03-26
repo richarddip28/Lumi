@@ -12,6 +12,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,7 +39,7 @@ public class MessageBoardScreen extends AppCompatActivity {
 
     Typeface custom_font;
     TextView header;
-    String messagetoSend, currentTime, user;
+    String messagetoSend, currentTime, user, soundText, lightText;
     EditText textfield;
     Button send;
     Date d;
@@ -53,9 +54,10 @@ public class MessageBoardScreen extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseUser fUser;
     DatabaseReference getchatlist;
+    DatabaseReference getCryingActivity, getLightActivity;
     FirebaseDatabase database;
     DatabaseReference myRef;
-
+    InputMethodManager inputManager;
 
     public void setFont(){
 
@@ -91,6 +93,7 @@ public class MessageBoardScreen extends AppCompatActivity {
         editor = prefs.edit();
         set = new HashSet<String>();
         setFont();
+        inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getInstance().getReference();
@@ -100,9 +103,35 @@ public class MessageBoardScreen extends AppCompatActivity {
             getchatlist = FirebaseDatabase.getInstance().getReference().
                     child(prefs.getString("lumi_id", null)).child("chatlist");
 
+            getCryingActivity = myRef.child("sound").child("Crying Activity");
+
+
+            getCryingActivity.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    soundText = dataSnapshot.getValue(String.class);
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
+            getLightActivity = myRef.child("brightness").child("Brightness Value");
+            getLightActivity.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    lightText = dataSnapshot.getValue().toString();
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
             fUser = auth.getCurrentUser();
 
-            Toast.makeText(this, "WORKING", Toast.LENGTH_SHORT).show();
         }catch(Exception e) {
         }
 
@@ -123,6 +152,8 @@ public class MessageBoardScreen extends AppCompatActivity {
                              chatList.add(snapshot.getValue().toString());
                         }
                         getchatlist.removeEventListener(this);
+                            chatList.add("Last Crying at " + soundText);
+                            chatList.add("Brightness level: " + lightText);
                     }
 
                     @Override
@@ -130,14 +161,7 @@ public class MessageBoardScreen extends AppCompatActivity {
 
                     }
                 });
-
-
-
-
-
         }
-
-
     }
 
     public void addItems(){
@@ -163,11 +187,11 @@ public class MessageBoardScreen extends AppCompatActivity {
                 currentTime = sdf.format(d);
                 addItems();
                 textfield.setText("");
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
 
             }
         }catch(Exception e){
-            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-
         }
     }
 
@@ -177,10 +201,8 @@ public class MessageBoardScreen extends AppCompatActivity {
         setContentView(R.layout.activity_message_board_screen);
         init();
 
-
         adapter = new ArrayAdapter<String>(this, R.layout.custom_list,R.id.list_content,chatList);
         list.setAdapter(adapter);
-
     }
 
     @Override

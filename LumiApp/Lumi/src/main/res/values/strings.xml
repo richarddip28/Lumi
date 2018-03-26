@@ -87,6 +87,16 @@
     <!--Settings-->
     <string name="titleSetting">Settings</string>
 
+    <!--Color Menu-->
+    <string-array name="led_list">
+        <item>Choose LED Pattern</item>
+        <item>Color Wipe</item>
+        <item>Theatre Chase</item>
+        <item>Rainbow</item>
+        <item>Rainbow Cycle</item>
+        <item>Theatre Chase Rainbow</item>
+    </string-array>
+
     <!--Timer Menu-->
     <string name="startButton">Start</string>
     <string name="timerDefault">00:00</string>

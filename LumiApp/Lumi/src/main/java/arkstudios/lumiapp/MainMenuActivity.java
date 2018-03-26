@@ -23,6 +23,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -50,14 +59,11 @@ public class MainMenuActivity extends AppCompatActivity {
     List<String> list;
     Context context;
     Set set;
+    Boolean isThere = false;
 
-    public void clearCache(View view){
-
-        list = (Arrays.asList(getResources().getStringArray(R.array.user_list)));
-        editor.clear();
-        editor.commit();
-        adapter.notifyDataSetChanged();
-    }
+    DatabaseReference myRef,getUsers;
+    FirebaseAuth auth;
+    FirebaseUser user;
 
     public void init(){
 
@@ -75,7 +81,8 @@ public class MainMenuActivity extends AppCompatActivity {
         tv = (TextView) findViewById(R.id.textView);
         tv.setTypeface(custom_font);
 
-        list = new LinkedList<String>(Arrays.asList(getResources().getStringArray(R.array.user_list)));
+        list = new ArrayList<String>();
+        list.add("Choose User");
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
         set = new HashSet<String>();
@@ -83,10 +90,15 @@ public class MainMenuActivity extends AppCompatActivity {
 
         userList = (Spinner) findViewById(R.id.spinner_users);
 
+
         context = getBaseContext();
         if(prefs.getStringSet("userList", null) != null) {
             list.clear();
             list.addAll(prefs.getStringSet("userList", null));
+
+
+
+
         }
 
 
@@ -95,6 +107,9 @@ public class MainMenuActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         userList.setAdapter(adapter);
         userList.setSelection(prefs.getInt("start_pos", 0));
+
+
+
 
 
 
@@ -123,6 +138,7 @@ public class MainMenuActivity extends AppCompatActivity {
                                 editor.putStringSet("userList", set);
                                 editor.commit();
                                 adapter.notifyDataSetChanged();
+
                         }
                     })
 

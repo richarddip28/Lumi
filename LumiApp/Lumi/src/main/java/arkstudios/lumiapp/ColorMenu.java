@@ -9,14 +9,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class ColorMenu extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-    //github test to prove github merge works
-    //hi kevin
-    //8:48pm jan 15 2018
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+public class ColorMenu extends AppCompatActivity {
 
     public ImageButton menu;
     public ImageButton settings;
@@ -27,6 +39,17 @@ public class ColorMenu extends AppCompatActivity {
     Intent nextScreen;
     Animation fadeIn;
     Animation fadeOut;
+    TextView description;
+
+    ArrayAdapter<String> adapter;
+    Spinner led_List;
+    List<String> list;
+
+    DatabaseReference myRef,getLED;
+    FirebaseAuth auth;
+    FirebaseUser user;
+
+    int LED_option;
 
     public void init(){
 
@@ -41,6 +64,37 @@ public class ColorMenu extends AppCompatActivity {
         fadeOut = AnimationUtils.loadAnimation(this,
                 android.R.anim.fade_out);
 
+        description = findViewById(R.id.description);
+
+        led_List = (Spinner) findViewById(R.id.spinner_led);
+        list = new LinkedList<String>(Arrays.asList(getResources().getStringArray(R.array.led_list)));
+
+        adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, list);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        led_List.setAdapter(adapter);
+        led_List.setSelection(0);
+
+        try {
+            auth = FirebaseAuth.getInstance();
+            myRef = FirebaseDatabase.getInstance().getReference();
+            user = auth.getCurrentUser();
+
+        }catch(Exception e) {
+        }
+
+        getLED = myRef.child("LED");
+
+        getLED.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                LED_option = dataSnapshot.getValue(Integer.class);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void menuButtonClicked(View view){
@@ -97,10 +151,50 @@ public class ColorMenu extends AppCompatActivity {
         startActivity(nextScreen);
     }
 
+    public void setDescription(int option){
+        switch(option){
+
+            case 1: description.setText("Wipe color across display a pixel at a time");
+                    break;
+
+            case 2: description.setText("Movie theater light style chaser animation");
+                    break;
+
+            case 3: description.setText("Draw rainbow that fades across all pixels at once");
+                    break;
+
+            case 4: description.setText("Draw rainbow that uniformly distributes itself across all pixels");
+                    break;
+
+            case 5: description.setText("Rainbow movie theater light style chaser animation");
+                    break;
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_menu);
         init();
+
+        led_List.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // your code here
+                if(position==0)
+                    led_List.setSelection(LED_option);
+                else
+                {
+                    user = auth.getCurrentUser();
+                    setDescription(position);
+                    myRef.child("LED").setValue(position);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+        });
     }
 }

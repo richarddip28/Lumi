@@ -29,6 +29,7 @@
         style="@style/TextViewTheme"
         android:textSize="22sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="72dp"
         app:layout_constraintRight_toRightOf="parent"

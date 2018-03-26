@@ -115,17 +115,17 @@ public class LoginScreen extends AppCompatActivity {
         }catch(Exception e){}
 
         try{
-        getpass.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                password = dataSnapshot.getValue(String.class);
-            }
+            getpass.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    password = dataSnapshot.getValue(String.class);
+                }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
         }catch(Exception e){
             Toast.makeText(this, getString(R.string.creds), Toast.LENGTH_LONG).show();
         }
